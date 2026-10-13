@@ -1,0 +1,2040 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Works by Siân</title>
+<meta name="description" content="Siân Louise Spicer, design and art direction. Brand, product and campaign work.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23000%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2247%22%20text-anchor%3D%22middle%22%20font-family%3D%22Helvetica%20Neue%2CHelvetica%2CArial%2Csans-serif%22%20font-weight%3D%22700%22%20font-size%3D%2246%22%20fill%3D%22%23fff%22%3ES%3C/text%3E%3C/svg%3E">
+<!-- Adobe Fonts kit for Neue Haas Grotesk goes here on the live site: <link rel="stylesheet" href="https://use.typekit.net/KITID.css"> -->
+</head><body>
+
+<style>
+@font-face{font-family:'Inter Tight';src:url(f/inter-tight-400.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Inter Tight';src:url(f/inter-tight-500.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Inter Tight';src:url(f/inter-tight-700.woff2) format('woff2');font-weight:700;font-display:swap}
+/* Layout: a white gallery room seen from its open front; walls hung with crops of the work; quiet type framing it like gallery captions */
+:root{
+  --wall:#FFFFFF;
+  --wall-side:#F3F3F1;
+  --wall-floor:#ECECE9;
+  --ink:#151514;
+  --muted:#151514;
+  --hair:rgba(21,21,20,.18);
+  --veil:rgba(255,255,255,.88);
+  --serif:'Mile Heights','Oakes Grotesk','Helvetica Neue',Arial,sans-serif;
+  --sans:'Oakes Grotesk','Helvetica Neue',Arial,sans-serif;
+  --gut:clamp(16px,3vw,40px);
+}
+
+html,body{height:100%}
+body{background:var(--wall);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;overflow:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.label{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- room ---------- */
+.scene{position:fixed;inset:0;overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none}
+.room{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d}
+.face{position:absolute;transform-style:preserve-3d}
+.face{background:transparent}
+.tile{position:absolute;display:block;opacity:var(--o,1);transform-style:preserve-3d;transition:opacity .45s ease,filter .45s ease,transform .45s cubic-bezier(.2,.7,.2,1);animation:hang .9s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:var(--d,0s)}
+.tile img{display:block;width:100%;height:100%;object-fit:cover;max-width:none;pointer-events:none;user-select:none}
+@keyframes hang{from{opacity:0;transform:translateZ(-30px)}to{opacity:var(--o,1);transform:none}}
+.room.dim .tile{opacity:.1;filter:grayscale(1)}
+.room.dim .tile.on{opacity:1;filter:none;transform:translateZ(14px)}
+
+/* ---------- chrome ---------- */
+header.top{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:calc(env(safe-area-inset-top,0px) + 18px) var(--gut) 0;pointer-events:none}
+header.top>*{pointer-events:auto}
+header.top::before{content:"";position:absolute;inset:0 0 -28px 0;background:linear-gradient(var(--wall) 45%,transparent);z-index:-1;pointer-events:none}
+.name{font-family:var(--serif);font-size:clamp(18px,1.8vw,24px);line-height:1;letter-spacing:.02em;white-space:nowrap}
+.name i{font-style:normal}
+nav{display:flex;gap:clamp(14px,2.4vw,28px);align-items:baseline}
+nav button{position:relative;padding-block:4px}
+nav button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(1)}
+
+.caption{position:fixed;left:var(--gut);right:var(--gut);bottom:calc(env(safe-area-inset-bottom,0px) + 22px);z-index:20;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;pointer-events:none}
+.cap-main{max-width:44rem;min-width:0;background:var(--veil);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:14px 18px 16px;margin:-14px -18px -16px;pointer-events:auto}
+.cap-title{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4.6vw,64px);line-height:1;letter-spacing:.01em;text-wrap:balance;margin:6px 0 10px}
+.cap-sum{max-width:36rem;color:var(--ink);margin:0}
+.cap-meta{color:var(--muted)}
+.cap-open{margin-top:12px;display:inline-flex;gap:8px;align-items:center;border-bottom:1px solid currentColor;padding-bottom:2px}
+.cap-hint{color:var(--muted);white-space:nowrap;pointer-events:auto;background:var(--veil);padding:6px 10px;margin:-6px -10px}
+@media (max-width:720px){.cap-hint{display:none}}
+/* slim caption: nothing at rest, one line when a project is picked */
+.caption.idle .cap-main{display:none}
+.cap-main{display:flex;align-items:baseline;gap:18px;padding:10px 16px;margin:0;max-width:min(100%,60rem);min-width:0}
+.cap-main .cap-sum{display:none}
+.cap-main .cap-meta{flex:none}
+.cap-main .cap-title{font-size:clamp(22px,2.2vw,30px);margin:0;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cap-main .cap-open{margin:0;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- panels ---------- */
+.panel{position:fixed;inset:0;z-index:40;background:var(--wall);overflow-y:auto;overscroll-behavior:contain;animation:rise .45s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.panel-bar{position:sticky;top:0;z-index:2;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:calc(env(safe-area-inset-top,0px) + 18px) var(--gut) 14px;background:var(--wall)}
+.wrap{padding-inline:var(--gut);padding-block:clamp(28px,5vw,64px) 96px;max-width:1800px;margin:0 auto}
+
+/* index */
+.idx-group{margin-bottom:56px}
+.idx-group h2{margin:0 0 12px;color:var(--muted);font-size:13px}
+.idx-row{display:grid;grid-template-columns:minmax(0,1fr) 15rem;column-gap:24px;row-gap:4px;align-items:end;width:100%;text-align:left;padding:22px 0 18px;border-top:1px solid var(--hair);transition:padding .3s}
+.idx-row:last-child{border-bottom:1px solid var(--hair)}
+.idx-row .t{font-family:var(--serif);font-size:clamp(34px,5.2vw,100px);line-height:.98;letter-spacing:.01em;text-wrap:balance;grid-row:1/3}
+.idx-row .c,.idx-row .y{font-size:13px;grid-column:2;text-align:right}
+.idx-row .c{grid-row:1;align-self:end}
+.idx-row .y{grid-row:2}
+.idx-row .c{color:var(--muted)}
+.idx-row .y{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.idx-row:hover{padding-left:20px}
+.idx-list:hover .idx-row:not(:hover) .t{opacity:1}
+.idx-row .t{transition:opacity .3s}
+@media (max-width:720px){.idx-row{grid-template-columns:minmax(0,1fr);gap:6px;padding:16px 0 14px}.idx-row .t{grid-row:auto}.idx-row .c,.idx-row .y{grid-column:1;grid-row:auto;text-align:left;display:block}}
+.peek{position:fixed;z-index:45;width:clamp(280px,34vw,560px);pointer-events:none;opacity:0;transition:opacity .2s;max-width:100%}
+.peek img{width:100%;height:auto;max-height:72vh;object-fit:contain;display:block}
+@media (hover:none){.peek{display:none}}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px)}
+.about .lead{font-family:var(--sans);font-weight:400;font-size:clamp(24px,2.6vw,34px);line-height:1.25;letter-spacing:-.01em;margin:0;text-wrap:balance}
+.about p{max-width:34rem;margin:0 0 1em}
+.mail{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-top:28px}
+.mail .addr{font-family:var(--sans);font-weight:500;font-size:22px;user-select:all}
+.mail button{border-bottom:1px solid currentColor}
+@media (max-width:720px){.about{grid-template-columns:1fr}}
+
+/* case study */
+.cs-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px)}
+.cs-head .eyebrow{color:var(--muted)}
+.cs-title{font-family:var(--serif);font-weight:400;font-size:clamp(40px,7.4vw,112px);line-height:.98;letter-spacing:.01em;margin:0;text-wrap:balance}
+.cs-sum{font-family:var(--sans);font-size:clamp(19px,1.9vw,24px);line-height:1.35;max-width:40rem;margin:6px 0 0}
+.cs-hero{width:100%;max-height:78vh;object-fit:cover;display:block;margin-bottom:clamp(28px,4vw,48px);background:var(--wall-side)}
+.cs-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-block:18px;border-top:1px solid var(--ink);border-bottom:1px solid var(--hair);margin-bottom:clamp(32px,5vw,64px)}
+.cs-meta div{min-width:0}
+.cs-meta dt{color:var(--muted);margin-bottom:6px}
+.cs-meta dd{margin:0}
+@media (max-width:820px){.cs-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-stats{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,72px);margin-bottom:clamp(32px,5vw,64px)}
+.cs-stats .v{font-family:var(--serif);font-size:clamp(44px,6vw,84px);line-height:1;letter-spacing:.01em}
+.cs-stats .l{color:var(--muted);max-width:12rem}
+.cs-sec{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,38rem);gap:clamp(16px,4vw,64px);padding-block:22px;border-top:1px solid var(--hair)}
+.cs-sec h3{margin:4px 0 0}
+.cs-sec p{margin:0 0 .9em;font-size:16.5px;line-height:1.6}
+.cs-sec ul{margin:0 0 1em;padding-left:1.1em}
+.cs-sec li{margin-bottom:.3em}
+.feat-title{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:.01em;margin:clamp(48px,7vw,96px) 0 18px}
+@media (max-width:720px){.cs-sec{grid-template-columns:1fr}}
+.cs-intro{max-width:44rem;margin-bottom:clamp(24px,4vw,48px)}
+.cs-intro p{font-size:18px;line-height:1.55;margin:0 0 1em}
+.cs-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(10px,1.5vw,20px);margin-top:clamp(40px,6vw,80px)}
+.cs-gallery img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/5;background:var(--wall-side)}
+.cs-gallery img.wide{grid-column:1/-1;aspect-ratio:16/9}
+@media (max-width:600px){.cs-gallery{grid-template-columns:1fr}}
+.cs-next{display:flex;justify-content:space-between;align-items:baseline;gap:16px;width:100%;text-align:left;margin-top:clamp(56px,8vw,112px);padding-top:18px;border-top:1px solid var(--ink)}
+.cs-next .t{font-family:var(--serif);font-size:clamp(30px,4.4vw,64px);line-height:1;letter-spacing:.01em;transition:letter-spacing .4s}
+.cs-next:hover .t{letter-spacing:.06em}
+
+.name,.cap-title,.cs-title,.idx-row .t,.feat-title,.cs-next .t,.cs-stats .v{word-spacing:-.2em}
+@media (max-width:720px){
+  .name{font-size:16px}
+  .caption.idle{display:none}
+  .cap-main{padding:10px 14px;margin:0;display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%}
+  .caption{left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom,0px) + 12px)}
+  .cap-main .cap-meta,.cap-main .cap-sum{display:none}
+  .cap-main .cap-title{font-size:22px;margin:0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cap-main .cap-open{margin:0;flex:none}
+  .cap-main .vp{display:none}
+}
+.touch-hint{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 20px);transform:translateX(-50%);z-index:20;background:var(--veil);padding:8px 14px;color:var(--muted);white-space:nowrap;pointer-events:none;transition:opacity .6s}
+.touch-hint.gone{opacity:0}
+@media (hover:hover) and (min-width:721px){.touch-hint{display:none}}
+
+/* ruled copy columns (case studies and About) */
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));font-size:14px;line-height:1.32;font-weight:500}
+.cols>div{padding-inline:clamp(14px,1.8vw,30px);border-left:1px solid currentColor;min-width:0}
+.cols>div:first-child{padding-left:0;border-left:0}
+.cols h3{font-size:clamp(20px,1.7vw,28px);line-height:1.05;font-weight:700;letter-spacing:-.025em;color:var(--ink);margin:0 0 14px}
+.cols p{margin:0 0 .9em}
+.cols ul{margin:0;padding-left:1.1em}
+.cs-details dl{margin:0;display:grid;gap:12px}
+.cs-details dt{color:var(--ink);font-weight:700}
+.cs-details dd{margin:0}
+.cs-details .cs-client{margin:0 0 12px}
+.cols .cs-disc{list-style:none;padding:0;margin:0}
+@media (max-width:1000px){.cols{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}.cols>div:nth-child(odd){padding-left:0;border-left:0}}
+@media (max-width:600px){.cols{grid-template-columns:1fr}.cols>div{padding:18px 0 0;border-left:0;border-top:1px solid currentColor}.cols>div:first-child{border-top:0;padding-top:0}}
+
+/* case study: header, sideways images, columns, all on one screen */
+#case.wrap{padding-top:0;max-width:none}
+.cs-stage{box-sizing:border-box;position:sticky;display:flex;flex-direction:column;gap:clamp(12px,2vh,22px);padding-block:clamp(14px,2.4vh,28px)}
+#case{overflow-x:clip}
+.cs-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
+.cs-top .eyebrow{color:var(--muted);margin-bottom:8px}
+.cs-top .cs-title{font-size:clamp(34px,4.4vw,80px);line-height:.95;margin:0}
+.cs-top .cs-sum{max-width:none;white-space:nowrap;flex:none;margin:0;font-size:16px;line-height:1.35;text-align:right}
+.cs-top>div{min-width:0}
+.cs-strip-wrap{flex:1 1 0;min-height:22vh;overflow:hidden;margin-inline:calc(-1*var(--gut));outline:none}
+#case:not(.flow) .cs-strip-wrap{touch-action:pan-y}
+.cs-track{display:flex;gap:14px;height:100%;padding-inline:var(--gut);will-change:transform;width:max-content}
+.cs-track img{height:100%;width:auto;max-width:none;flex:none;background:var(--wall-side);user-select:none;-webkit-user-drag:none}
+.cs-prog{display:none}
+.cs-prog i{display:block;height:1px;width:0;background:var(--ink)}
+.cs-cols{flex:none}
+/* back arrow on All Projects */
+[data-close]{display:inline-flex;align-items:center}
+.back-arrow{display:block;flex:none;width:1.25em;height:.95em;margin-right:.6em;overflow:visible;transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+[data-close]:hover .back-arrow{transform:translateX(-4px)}
+/* copy column rules run down to the bottom of the screen */
+#case:not(.flow) .cs-stage{padding-bottom:0}
+#case:not(.flow) .cs-cols>div{padding-bottom:clamp(14px,2.4vh,28px)}
+/* full-width rule across the top of the copy columns */
+.cs-cols{border-top:1px solid var(--ink);margin-inline:calc(-1*var(--gut));padding-inline:var(--gut)}
+.cs-cols>div{padding-top:clamp(14px,2vh,22px)}
+/* more room under the project title */
+.cs-top{margin-bottom:clamp(14px,2.6vh,36px)}
+.cs-more{padding-block:clamp(40px,6vw,96px) 0}
+.cs-more .cols{padding-bottom:12px}
+/* stacked version for phones and short screens */
+#case.flow .cs-stage{position:static;height:auto;overflow:visible}
+#case.flow .cs-top{flex-direction:column;align-items:flex-start;gap:12px}
+#case.flow .cs-top .cs-sum{text-align:left}
+@media (max-width:720px){#case.flow .cs-top .cs-sum{white-space:normal}}
+#case.flow .cs-strip-wrap{flex:none;height:min(60vh,640px);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none}
+#case.flow .cs-strip-wrap::-webkit-scrollbar{display:none}
+#case.flow .cs-track{transform:none!important}
+#case.flow .cs-track img{scroll-snap-align:none}
+#case.flow .cs-strip-wrap{scroll-snap-type:none}
+#case.flow .cs-prog{display:none}
+@media (max-width:600px){#case.flow .cs-strip-wrap{height:52vh}#case.flow .cs-track{gap:8px}}
+
+/* About: dark */
+#p-about{--wall:#232322;--wall-side:#2c2c2b;--ink:#E7E7E3;--muted:#E7E7E3;--hair:rgba(231,231,227,.28);--veil:rgba(35,35,34,.9);background:#232322;color:#E7E7E3;color-scheme:dark}
+#p-about .panel-bar{background:#232322}
+.ab-title{white-space:nowrap;font-family:var(--serif);font-weight:400;font-size:clamp(30px,7.6vw,150px);line-height:.92;letter-spacing:.01em;word-spacing:-.2em;margin:0 0 clamp(20px,3vw,40px);color:#E7E7E3}
+.ab-intro{border-top:1px solid var(--hair);padding-top:clamp(20px,2.4vw,32px);max-width:62rem}
+.ab-intro p{font-size:clamp(18px,1.75vw,28px);line-height:1.28;margin:0 0 .7em}
+.ab-cols{margin-top:0}
+.ab-cols ul{list-style:none;padding:0}
+.ab-cols li{margin-bottom:.35em}
+.ab-mail{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.ab-mail button{border-bottom:1px solid currentColor;color:var(--muted)}
+
+/* grotesk type option (Atlason-style): bold, tight, sentence case */
+:root.t-grotesk{--serif:'neue-haas-grotesk-display','Neue Haas Grotesk Display Pro','Neue Haas Grotesk Display','Helvetica Neue',Helvetica,'Inter Tight',Arial,sans-serif;--sans:'neue-haas-grotesk-text','Neue Haas Grotesk Text Pro','Neue Haas Grotesk Text','Helvetica Neue',Helvetica,'Inter Tight',Arial,sans-serif}
+.t-grotesk :is(.name,.idx-row .t,.cs-title,.cs-stats .v,.feat-title,.cs-next .t,.ab-title,.foot .nm,.m-nm){font-weight:700;letter-spacing:-.045em;word-spacing:normal}
+.t-grotesk .cs-top .cs-title{font-size:clamp(40px,5.8vw,108px);line-height:.88}
+.t-grotesk .idx-row .t{font-size:clamp(38px,6.4vw,120px);line-height:.9}
+.t-grotesk .ab-title{line-height:.86}
+.t-grotesk .foot .nm,.t-grotesk .m-nm{font-size:15px;letter-spacing:-.02em}
+.t-grotesk .panel-bar .name{font-size:22px;letter-spacing:-.03em}
+.t-grotesk .cols,.t-grotesk .cs-top .cs-sum,.t-grotesk .ab-intro p{letter-spacing:-.01em}
+.t-grotesk .ab-intro p{font-weight:500}
+
+/* Index: big titles between black rules */
+.idx-head{margin-bottom:clamp(20px,2.6vw,40px)!important;white-space:nowrap;font-family:var(--serif);font-weight:700;font-size:clamp(48px,6.4vw,112px);line-height:.78;letter-spacing:-.055em;margin:0 0 clamp(18px,2.4vw,40px);margin-left:-.04em}
+#idx .idx-group{margin:0}
+#idx .idx-group h2{margin:0;padding:clamp(28px,4vw,56px) 0 10px;color:var(--ink);font-size:13px}
+#idx .idx-group:first-of-type h2{padding-top:0}
+#idx .idx-row{position:relative;display:block;width:calc(100% + 2*var(--gut));margin-inline:calc(-1*var(--gut));padding:clamp(8px,.9vw,14px) var(--gut) clamp(6px,.7vw,12px);border-top:1px solid var(--ink)}
+#idx{max-width:none}
+#idx .idx-list .idx-row:last-child{border-bottom:1px solid var(--ink)}
+#idx .idx-row .t{display:block;font-family:var(--serif);font-weight:700;font-size:clamp(40px,6.8vw,148px);line-height:.95;letter-spacing:-.05em;padding-right:15rem;margin-left:-.03em;text-wrap:balance}
+#idx .idx-row .c,#idx .idx-row .y{position:absolute;right:var(--gut);font-size:13px;color:var(--ink);text-align:right}
+#idx .idx-row .c{bottom:clamp(30px,2.4vw,40px)}
+#idx .idx-row .y{bottom:clamp(10px,1vw,16px)}
+#idx .idx-row:hover{padding-left:var(--gut)}
+:root:not(.t-grotesk) #idx .idx-row .t,:root:not(.t-grotesk) .idx-head{font-weight:400;letter-spacing:.01em;word-spacing:-.2em}
+@media (max-width:720px){#idx .idx-row .t{padding-right:0}#idx .idx-row .c,#idx .idx-row .y{position:static;display:block;text-align:left;margin-top:6px}}
+
+#p-about:not([hidden]){display:flex;flex-direction:column}
+#p-about .panel-bar{flex:none}
+#about{flex:1 0 auto;display:flex;flex-direction:column;width:100%;box-sizing:border-box;padding-bottom:clamp(14px,2.4vh,28px)}
+#about .ab-cols{margin-top:auto;padding-top:clamp(28px,5vh,96px)}
+
+.line,.foot{font-size:clamp(16px,1.5vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.line{gap:clamp(18px,2.6vw,48px)}
+.foot .nm{font-size:inherit;font-weight:700;letter-spacing:-.02em}
+.foot .now b{font-weight:700}
+.foot .now{font-weight:700}
+.mbar,.foot{font-weight:700}
+@media (max-width:720px){.mbar{font-size:15px}.m-nm{font-size:15px}.foot{font-size:14px}}
+
+/* Works grid */
+.wk-tabs{display:flex;gap:clamp(14px,1.6vw,24px);margin:0 0 clamp(16px,2vw,28px)}
+.wk-tabs button{font-family:var(--serif);font-weight:700;font-size:clamp(17px,1.4vw,24px);letter-spacing:-.035em;line-height:1}
+.wk-tabs button::before{content:"[ ] ";font-family:var(--sans);font-weight:500;font-size:.5em;vertical-align:.35em;white-space:pre}
+.wk-tabs button[aria-selected="true"]::before{content:"[•] "}
+.wk-grid{display:flex;align-items:flex-start;gap:clamp(12px,1.4vw,24px)}
+.wk-col{flex:1 1 0;min-width:0}
+.wk{display:block;width:100%;text-align:left;margin:0 0 clamp(20px,2.2vw,36px)}
+.wk img{display:block;width:100%;height:auto;background:var(--wall-side)}
+.wk-cap{display:block;margin-top:8px;font-size:13px;font-weight:700;letter-spacing:-.015em;line-height:1.2}
+
+.cs-tabs{flex:none;display:flex;flex-wrap:wrap;gap:6px clamp(14px,1.6vw,26px);margin:0;font-weight:700;font-size:clamp(15px,1.2vw,19px);letter-spacing:-.02em}
+.cs-tabs button::before{content:"[ ] ";white-space:pre;font-weight:500}
+.cs-tabs button[aria-selected="true"]::before{content:"[•] "}
+
+/* no bracket markers anywhere; the selected feature is shown by weight */
+.line button::before,.m-nav button::before,.cs-tabs button::before,.wk-tabs button::before{content:none!important}
+.cs-tabs button{font-weight:400}
+.cs-tabs button[aria-selected="true"]{font-weight:700}
+
+@media (min-width:1001px){.cs-cols .cs-switch{grid-column:4}}
+.cs-switch ul{list-style:none;margin:0 0 18px;padding:0;display:grid;gap:6px}
+.cs-switch button{font-size:clamp(15px,1.15vw,19px);font-weight:400;letter-spacing:-.015em;text-align:left}
+.cs-switch button[aria-selected="true"]{font-weight:700}
+.cs-switch dl{margin:0;display:grid;gap:12px}
+.cs-switch dt{font-weight:700}
+.cs-switch dd{margin:0}
+@media (prefers-reduced-motion:reduce){
+  .tile,.panel{animation:none}
+  .tile,.idx-row,nav button::after{transition:none}
+}
+
+/* Works list: images fill the left half, title and description on the right */
+.wl{border-bottom:1px solid var(--ink)}
+.wl-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);align-items:start;width:100%;text-align:left;padding:clamp(12px,1.2vw,18px) 0 clamp(28px,3.4vw,56px);border-top:1px solid var(--ink);color:var(--ink)}
+.wl-imgs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(4px,.4vw,8px)}
+.wl-imgs img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;background:var(--wall-side)}
+.wl-text{display:block;font-size:clamp(13px,1vw,17px);line-height:1.35;letter-spacing:-.005em;max-width:none}
+.wl-t{display:block;font-weight:700;margin-bottom:.15em}
+.wl-arrow{display:inline-block;transition:transform .25s ease}
+.wl-row:hover .wl-arrow{transform:translateX(4px)}
+.wl-d{display:block;font-weight:400}
+@media (max-width:900px){.wl-row{grid-template-columns:minmax(0,1fr);gap:14px}}
+@media (max-width:600px){.wl-imgs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none;overscroll-behavior-x:contain}.wl-imgs::-webkit-scrollbar{display:none}.wl-imgs img{flex:none;width:38vw;scroll-snap-align:start}}
+</style>
+<style>
+/* stream */
+html,body{height:auto}
+html{scroll-snap-type:y mandatory}
+body{overflow-y:auto;overflow-x:hidden;background:var(--wall)}
+body.locked{overflow:hidden}
+.stream{display:flex;flex-direction:column;align-items:center;gap:6vh;padding-block:calc(50vh - 34vh) calc(50vh - 34vh)}
+.shot{display:flex;gap:var(--pair-gap,14px);scroll-snap-align:center;line-height:0;cursor:pointer;transition:opacity .5s ease;opacity:1}
+.shot.on{opacity:1;filter:none}
+.shot img{display:block;max-width:46vw;height:auto;object-fit:cover}
+.shot:focus-visible{outline:1px solid var(--ink);outline-offset:8px}
+
+.line{position:fixed;left:0;right:0;top:50%;transform:translateY(-50%);z-index:20;display:grid;grid-template-columns:repeat(2,max-content) minmax(0,1fr) repeat(2,max-content);gap:clamp(16px,4vw,64px);align-items:baseline;padding-inline:var(--gut);font-size:12px;line-height:1.2;color:#fff;mix-blend-mode:difference;pointer-events:none}
+.line>*{pointer-events:auto;min-width:0}
+.line button,.line span{white-space:nowrap}
+.line button::before{content:"[ ] ";white-space:pre}
+.line button::after{display:none}
+.line button[aria-pressed="true"]::before{content:"[•] "}
+.foot .now{flex:1;min-width:0;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.foot .now b{font-weight:500}
+.foot .count{font-variant-numeric:tabular-nums}
+.foot{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:0 var(--gut) calc(env(safe-area-inset-bottom,0px) + 16px);font-size:12px;color:#fff;mix-blend-mode:difference;pointer-events:none}
+.foot .nm{font-family:var(--serif);font-size:15px;letter-spacing:.06em;word-spacing:-.15em}
+@media (max-width:720px){
+  .line{grid-template-columns:repeat(3,max-content) minmax(0,1fr);column-gap:16px;row-gap:6px;font-size:11px}
+  .line>span:empty{display:none}
+  .line .mail{grid-column:1/4;grid-row:2}
+  .line .loc{grid-column:4;grid-row:2;justify-self:end}
+  .foot{font-size:11px}
+  .foot .now{text-align:right}
+  .foot .count{display:none}
+  .stream{gap:5vh}
+  .foot .role{display:none}
+}
+.mbar,.fmail,.floc{display:none}
+@media (max-width:720px){
+  .line{display:none}
+  .mbar{position:fixed;left:0;right:0;top:0;z-index:20;display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:calc(env(safe-area-inset-top,0px) + 16px) var(--gut) 0;color:#fff;mix-blend-mode:difference;font-size:12px}
+  .m-nm{font-family:var(--serif);font-size:16px;letter-spacing:.04em;word-spacing:-.15em;white-space:nowrap}
+  .m-nav{display:flex;gap:16px}
+  .m-nav button::before{content:"[ ] ";white-space:pre}
+  .m-nav button[aria-pressed="true"]::before{content:"[•] "}
+  .foot{flex-wrap:wrap;row-gap:6px}
+  .foot .nm,.foot .role{display:none}
+  .foot .now{flex:1 0 100%;text-align:left}
+  .foot .fmail,.foot .floc{display:inline}
+}
+@media (prefers-reduced-motion:reduce){.shot{transition:none}html{scroll-behavior:auto}}
+/* project caption sits under each homepage image, replacing the floating title */
+.shot{flex-direction:column;align-items:flex-start;gap:0}
+.shot,.shot:hover{text-decoration:none;color:var(--ink)}
+.shot .pics{display:flex;gap:var(--pair-gap,14px)}
+.shot{position:relative}
+.shot-cap{position:absolute;left:16px;bottom:14px;display:block;color:#fff;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:-.01em;line-height:1.2;white-space:nowrap}
+
+@media (min-width:721px){.shot-cap.ink-dark{color:var(--ink)}}
+@media (max-width:720px){.shot-cap.inkm-dark{color:var(--ink)}}
+@media (min-width:721px){.foot{top:0;bottom:auto;padding:calc(env(safe-area-inset-top,0px) + 20px) var(--gut) 0}}
+@media (max-width:720px){.shot-cap{left:12px;bottom:10px;font-size:12px}}
+.foot .now{display:none!important}
+</style>
+
+<script>document.documentElement.classList.add('t-grotesk')</script>
+<h1 class="sr">Siân Louise Spicer, design and art direction</h1>
+<main class="stream" id="stream" aria-label="Work, newest first"></main>
+
+<nav class="line" aria-label="Main">
+  <button id="btn-work" aria-pressed="true" hidden>Work</button>
+  <button id="btn-index" aria-pressed="false">Index</button>
+  <button id="btn-about" aria-pressed="false">About</button>
+  <span></span>
+  <span class="mail">hello@worksbysian.com</span>
+  <span class="loc">West Sussex, UK</span>
+</nav>
+<div class="mbar"><button class="m-nm" id="m-home">Works by Siân</button><span class="m-nav"><button id="m-index" aria-pressed="false">Index</button><button id="m-about" aria-pressed="false">About</button></span></div>
+<div class="foot"><span class="nm">Works by Siân</span><span class="now" id="now" aria-live="polite"></span><span class="role">Design &amp; Art Direction</span><span class="fmail">hello@worksbysian.com</span><span class="floc">West Sussex, UK</span></div>
+<button id="home" hidden></button>
+<section class="panel" id="p-index" hidden aria-label="Index of work">
+  <div class="panel-bar"><button class="label" data-close><svg class="back-arrow" viewBox="0 0 16 12" aria-hidden="true"><path d="M15 6H1.5M6.5 1 1.5 6l5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>All Projects</button><span class="name"></span></div>
+  <div class="wrap" id="idx"></div>
+</section>
+<section class="panel" id="p-about" hidden aria-label="About">
+  <div class="panel-bar"><button class="label" data-close><svg class="back-arrow" viewBox="0 0 16 12" aria-hidden="true"><path d="M15 6H1.5M6.5 1 1.5 6l5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>All Projects</button><span class="name">About</span></div>
+  <div class="wrap about" id="about"></div>
+</section>
+<section class="panel" id="p-case" hidden aria-label="Case study">
+  <div class="panel-bar"><button class="label" data-close><svg class="back-arrow" viewBox="0 0 16 12" aria-hidden="true"><path d="M15 6H1.5M6.5 1 1.5 6l5 5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>All Projects</button><span class="name" id="case-bar">Work</span></div>
+  <article class="wrap" id="case"></article>
+</section>
+<div class="peek" id="peek"><img alt=""></div>
+<script>
+const DATA = {
+ "projects": [
+  {
+   "slug": "whering-brand",
+   "title": "Whering Brand",
+   "client": "Whering",
+   "year": "2024–26",
+   "category": "Branding",
+   "role": "Led the rebrand, from strategy through to visual identity",
+   "services": [
+    "Concept",
+    "Art Direction",
+    "Logo Design",
+    "Product Design",
+    "UX/UI Design"
+   ],
+   "summary": "A bolder identity for a wardrobe app, built on Freedom in Structure.",
+   "format": "brand",
+   "stats": [
+    {
+     "value": "+55%",
+     "label": "monthly active users"
+    },
+    {
+     "value": "+108%",
+     "label": "social reach"
+    },
+    {
+     "value": "13 months",
+     "label": "highest monthly organic installs in"
+    }
+   ],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "Whering helps people get more out of the clothes they already own. Its previous identity felt too delicate for its Gen Z audience and ambitions for international growth.",
+      "I led the rebrand, from strategy through to visual identity. The launch delivered its highest monthly organic installs in 13 months, with monthly active users up 55% and social reach up 108%."
+     ]
+    },
+    {
+     "h": "Insight",
+     "p": [
+      "Whering helps people organise their wardrobes and find new ways to wear what they own. My research into wardrobe psychology explored how structure can create space for creativity."
+     ]
+    },
+    {
+     "h": "Direction",
+     "p": [
+      "Freedom in Structure became the starting point for the new identity. I developed a custom logo, a distinctive 3D icon and a vibrant visual system designed to work across the app, campaigns and wider brand."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "c/wb2-01.jpg",
+     "w": 1244,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-02.jpg",
+     "w": 1080,
+     "h": 1219
+    },
+    {
+     "src": "c/wb2-03.jpg",
+     "w": 1046,
+     "h": 1179
+    },
+    {
+     "src": "c/wb2-04.jpg",
+     "w": 1244,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-05.jpg",
+     "w": 1244,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-06.jpg",
+     "w": 1242,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-07.jpg",
+     "w": 2489,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-08.jpg",
+     "w": 1244,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-09.jpg",
+     "w": 2436,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-10.jpg",
+     "w": 2066,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-11.jpg",
+     "w": 1244,
+     "h": 1400
+    },
+    {
+     "src": "c/wb2-12.jpg",
+     "w": 1064,
+     "h": 1197
+    }
+   ],
+   "year_sort": 2026,
+   "story": [
+    "Whering helps people get more out of the clothes they already own. Its previous identity felt too delicate for its Gen Z audience and its ambitions for international growth, so I led the rebrand, from strategy through to visual identity.",
+    "The idea came from my research into wardrobe psychology: structure can create space for creativity. Freedom in Structure shaped a custom logo, a distinctive 3D icon and a vibrant visual system built to work across the app, campaigns and wider brand.",
+    "The launch delivered Whering's highest monthly organic installs in 13 months, with monthly active users up 55% and social reach up 108%."
+   ]
+  },
+  {
+   "slug": "worn-by-whering",
+   "title": "WORN by Whering",
+   "client": "Whering",
+   "year": "2026",
+   "category": "Branding",
+   "role": "Developed the WORN identity and editorial style",
+   "services": [
+    "Branding",
+    "Art Direction",
+    "Logo Design",
+    "Website Design",
+    "Print Design"
+   ],
+   "summary": "An editorial spin-off for Whering: a London Fashion Week zine and a redesigned blog.",
+   "format": "brand",
+   "stats": [],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "Whering wanted to expand its editorial content with a physical zine for London Fashion Week and a redesigned blog. The aim was to help people get more out of their wardrobes without simply telling them what to buy."
+     ]
+    },
+    {
+     "h": "Insight",
+     "p": [
+      "Fashion content often focuses on trends and what to wear. WORN explores the stories behind clothes and encourages people to experiment with their own wardrobes."
+     ]
+    },
+    {
+     "h": "Direction",
+     "p": [
+      "I developed a separate identity for WORN, including an embroidered logo, a more restricted colour palette and its own editorial style. The tone was personal and anecdotal, with an emphasis on asking questions rather than giving advice."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "c/wn-01.jpg",
+     "w": 1223,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-02.jpg",
+     "w": 1965,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-03.jpg",
+     "w": 1223,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-04.jpg",
+     "w": 1223,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-05.jpg",
+     "w": 1228,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-06.jpg",
+     "w": 2450,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-07.jpg",
+     "w": 1226,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-08.jpg",
+     "w": 1186,
+     "h": 1354
+    },
+    {
+     "src": "c/wn-09.jpg",
+     "w": 1231,
+     "h": 1400
+    },
+    {
+     "src": "c/wn-10.jpg",
+     "w": 1228,
+     "h": 1400
+    }
+   ],
+   "year_sort": 2026,
+   "story": [
+    "Whering wanted to grow its editorial side, with a physical zine for London Fashion Week and a redesigned blog. The aim was to help people get more out of their wardrobes without simply telling them what to buy.",
+    "Most fashion content is about trends and what to wear next. WORN explores the stories behind clothes instead, and encourages people to experiment with what they already own.",
+    "I gave it an identity of its own: an embroidered logo, a more restricted colour palette and an editorial style that's personal and anecdotal, asking questions rather than giving advice."
+   ]
+  },
+  {
+   "slug": "whering-product",
+   "title": "Whering Product",
+   "client": "Whering",
+   "year": "2023–25",
+   "category": "Product Design",
+   "role": "Design Director: led product design from early wireframes to production-ready UI",
+   "services": [
+    "Wireframes",
+    "UX & UI Design",
+    "Prototyping"
+   ],
+   "summary": "Leading product design for Whering, from wireframes to production UI.",
+   "format": "product",
+   "stats": [],
+   "intro": [
+    "As Design Director at Whering, I led product design from early wireframes through to production-ready UI, working across brand and product.",
+    "My work covered onboarding, profiles and engagement features including styling friends, challenges, streaks and Outfit Selfies. I also worked on extending Whering beyond the app through a Chrome extension and web app."
+   ],
+   "sections": [],
+   "features": [
+    {
+     "title": "Social Wardrobes",
+     "image_pdf_page": 10,
+     "context": "Whering users could style their own wardrobe, but nobody else's. Once an outfit was planned, there was nothing left to do until tomorrow. Our bet: letting people see and style friends' wardrobes would make Whering social, increasing time in app, strengthening onboarding and getting people styling over buying.",
+     "approach": "The core question was how to keep a feed full of real activity while giving people a reason to act on it. We made posting passive and engaging deliberate. Add an item or outfit and it appears in the feed automatically. From there, users style a friend, save to a wishlist or follow someone new. Style matching connects people, and Style Submissions let them style each other. We scoped the MVP to prove that loop first. Once it worked, we added reactions and the option to add friends' items to your own wardrobe.",
+     "outcome_points": [
+      "Extending the user journey beyond daily planning",
+      "Opened a new creative loop around styling friends",
+      "Built a feed that fills itself through everyday use",
+      "Validated a passive posting model"
+     ],
+     "outcome": "Style Submissions became the strongest driver of return visits. Being styled by a friend is a personal reason to open the app.",
+     "next": "Suggesting friends by style compatibility, not just contacts.",
+     "images": [
+      {
+       "src": "h/feat-social-wardrobes-hero.jpg",
+       "w": 2000,
+       "h": 1406
+      },
+      {
+       "src": "h/feat-social-wardrobes-wide.jpg",
+       "w": 2000,
+       "h": 1406
+      }
+     ]
+    },
+    {
+     "title": "Style Challenges",
+     "image_pdf_page": 11,
+     "context": "Outfit planning was meant to be a daily habit, but most users only opened the planner when they needed it. There was no momentum and nothing to aim for. Rather than build a permanent streak system on a hunch, we tested the idea with a time-boxed challenge at New Year, when people are already setting resolutions. We borrowed the 75 Hard format: 75 days, no skipped days, starting 1 January.",
+     "approach": "The challenge sat on top of the planner, so joining took one tap and taking part meant planning an outfit each day. A progress bar and calendar tracked each day, with milestone badges early on, when people are most likely to quit. If a day wasn't planned, a reminder went out before it was missed. After seven days, users could share a co-branded recap to Instagram, and finishing earned a profile badge. Our launch creator pulled out shortly before, so we ran it with our founder and kept the date.",
+     "outcome_points": [
+      "Turned New Year's resolutions into a brand moment for Whering",
+      "Higher planner completion and more consistent outfit logging",
+      "Low-risk validation that became the blueprint for streaks",
+      "Outfit recaps extended Whering's reach beyond the app"
+     ],
+     "outcome": "People plan daily when they have a goal and can see their progress. Style Streaks was built from this, keeping the calendar, day count and recap.",
+     "next": "",
+     "images": [
+      {
+       "src": "h/feat-style-challenges-hero.jpg",
+       "w": 2000,
+       "h": 1406
+      },
+      {
+       "src": "h/feat-style-challenges-wide.jpg",
+       "w": 2000,
+       "h": 1406
+      }
+     ]
+    },
+    {
+     "title": "Outfit Selfies",
+     "image_pdf_page": 12,
+     "context": "People already document their outfits on social media. We wanted that habit inside Whering. Once an outfit was planned, there was no record of how it actually looked on, just a flat lay with no sense of fit or proportion. At launch in 2024, detection wasn't reliable enough to link a photo to an outfit automatically, so we built the habit first with manual linking, designed to hand over to auto-detection later.",
+     "approach": "Users could upload a photo they already had or take one in app, saved to that day in the planner. The linked outfit sat underneath, and a corner toggle flipped between selfie and outfit, BeReal style, so people could compare what they planned with how it looked on. If something changed during the day, they could update the linked items. Selfies were private by default. Going public too early risked putting people off logging, and the habit mattered more at this stage. Sharing to the feed or externally was there for those who wanted it.",
+     "outcome_points": [
+      "Higher planner completion, more consistent outfit logging",
+      "Low-risk validation: built the habit before the tech",
+      "Shared selfies gave the Activity Feed a steady supply of content with no extra feature to build",
+      "Opt-in sharing turned personal logging into free organic reach"
+     ],
+     "outcome": "",
+     "next": "Auto-detection, landing on a habit and dataset that already exist.",
+     "images": [
+      {
+       "src": "h/feat-outfit-selfies-hero.jpg",
+       "w": 2000,
+       "h": 1406
+      },
+      {
+       "src": "h/feat-outfit-selfies-wide.jpg",
+       "w": 2000,
+       "h": 1406
+      }
+     ]
+    }
+   ],
+   "images": [
+    {
+     "src": "h/whering-product.jpg",
+     "w": 1666,
+     "h": 1875
+    },
+    {
+     "src": "h/whering-product-overview.jpg",
+     "w": 2000,
+     "h": 1406
+    },
+    {
+     "src": "h/feat-social-wardrobes-hero.jpg",
+     "w": 2000,
+     "h": 1406
+    },
+    {
+     "src": "h/feat-style-challenges-hero.jpg",
+     "w": 2000,
+     "h": 1406
+    },
+    {
+     "src": "h/feat-outfit-selfies-hero.jpg",
+     "w": 2000,
+     "h": 1406
+    }
+   ],
+   "year_sort": 2025
+  },
+  {
+   "slug": "open-wardrobes",
+   "title": "Open Wardrobes",
+   "client": "Whering",
+   "year": "2024",
+   "category": "Campaign",
+   "role": "Developed the launch campaign: concept, art direction and casting",
+   "services": [
+    "Concept",
+    "Art Direction",
+    "Casting",
+    "Campaign Creative",
+    "Photo & Video Art Direction",
+    "Editing",
+    "Post Production"
+   ],
+   "summary": "An open-casting launch campaign starring Whering's real users.",
+   "format": "campaign",
+   "stats": [],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "Whering's new Open Wardrobes and Activity Feed features let people explore and style other people's wardrobes. I developed a campaign to launch them, using an open casting to show the different people, clothes and styles already on the platform."
+     ]
+    },
+    {
+     "h": "Insight",
+     "p": [
+      "Everyone has their own way of dressing. I wanted the campaign to reflect the range of styles within Whering, from gothic to folk, pattern-clashing to androgynous."
+     ]
+    },
+    {
+     "h": "Direction",
+     "p": [
+      "I built the campaign around real users, their clothes and their own words. We showed usernames throughout, giving people someone to follow when they joined, and used personal style interviews to bring each person's wardrobe to life."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "c/ow-01.jpg",
+     "w": 919,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-02.jpg",
+     "w": 920,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-03.jpg",
+     "w": 915,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-04.jpg",
+     "w": 935,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-05.jpg",
+     "w": 1225,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-06.jpg",
+     "w": 917,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-07.jpg",
+     "w": 920,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-08.jpg",
+     "w": 935,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-09.jpg",
+     "w": 943,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-10.jpg",
+     "w": 935,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-11.jpg",
+     "w": 891,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-12.jpg",
+     "w": 935,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-13.jpg",
+     "w": 1225,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-14.jpg",
+     "w": 933,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-15.jpg",
+     "w": 935,
+     "h": 1400
+    },
+    {
+     "src": "c/ow-16.jpg",
+     "w": 935,
+     "h": 1400
+    }
+   ],
+   "year_sort": 2024,
+   "story": [
+    "Open Wardrobes and the Activity Feed let people explore and style other people's wardrobes. To launch them, I developed a campaign built on an open casting, showing the people, clothes and styles already on Whering.",
+    "Everyone has their own way of dressing, and the campaign needed to show that range, from gothic to folk, pattern-clashing to androgynous.",
+    "I built it around real users, their clothes and their own words. Personal style interviews brought each wardrobe to life, and usernames ran throughout, giving people someone to follow when they joined."
+   ]
+  },
+  {
+   "slug": "pentland-brands",
+   "title": "Pentland Brands",
+   "client": "Pentland Brands",
+   "year": "2023",
+   "category": "Branding",
+   "role": "Led the development of the new group identity",
+   "services": [
+    "Concept",
+    "Art Direction",
+    "Logo Design",
+    "Layout",
+    "Mockups"
+   ],
+   "summary": "A motion-led identity bringing 11 sports brands together under one group.",
+   "format": "brand",
+   "stats": [
+    {
+     "value": "11",
+     "label": "brands"
+    },
+    {
+     "value": "21",
+     "label": "offices"
+    }
+   ],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "Pentland Brands owns some of sport's best-known names, including Berghaus, Speedo and Ellesse, but its own profile was much lower. With 11 brands across 21 offices, it needed an identity that could bring the group together while giving the business its own presence.",
+      "I led the development of the new identity, launched publicly in June 2024."
+     ]
+    },
+    {
+     "h": "Insight",
+     "p": [
+      "Movement runs through all of Pentland's brands, from swimming and running to the outdoors. That became the starting point for the identity."
+     ]
+    },
+    {
+     "h": "Direction",
+     "p": [
+      "I developed a motion-led identity built around a forward-facing symbol, high-contrast imagery and typography that could move across print and animation."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "c/pb-01.jpg",
+     "w": 1338,
+     "h": 941
+    },
+    {
+     "src": "c/pb-02.jpg",
+     "w": 1244,
+     "h": 1400
+    },
+    {
+     "src": "c/pb-03.jpg",
+     "w": 595,
+     "h": 842
+    },
+    {
+     "src": "c/pb-04.jpg",
+     "w": 1339,
+     "h": 941
+    },
+    {
+     "src": "c/pb-05.jpg",
+     "w": 2490,
+     "h": 1400
+    },
+    {
+     "src": "c/pb-06.jpg",
+     "w": 1339,
+     "h": 941
+    },
+    {
+     "src": "c/pb-07.jpg",
+     "w": 825,
+     "h": 941
+    },
+    {
+     "src": "c/pb-08.jpg",
+     "w": 1620,
+     "h": 1400
+    },
+    {
+     "src": "c/pb-09.jpg",
+     "w": 1992,
+     "h": 1400
+    },
+    {
+     "src": "c/pb-10.jpg",
+     "w": 2414,
+     "h": 1400
+    },
+    {
+     "src": "c/pb-11.jpg",
+     "w": 1337,
+     "h": 940
+    }
+   ],
+   "year_sort": 2024,
+   "story": [
+    "Pentland Brands owns some of sport's best-known names, including Berghaus, Speedo and Ellesse, but its own profile was much lower. With 11 brands across 21 offices, it needed an identity that could bring the group together and give the business its own presence.",
+    "Movement runs through every Pentland brand, from swimming and running to the outdoors, so movement became the starting point.",
+    "I led the development of a motion-led identity, built around a forward-facing symbol, high-contrast imagery and typography that moves across print and animation. It launched publicly in June 2024."
+   ]
+  },
+  {
+   "slug": "berghaus-extrem",
+   "title": "Berghaus Extrem",
+   "client": "Berghaus",
+   "year": "2023",
+   "category": "Product Films",
+   "role": "Art direction, design, storyboards and style frames for a series of product films",
+   "services": [
+    "Art Direction",
+    "Design",
+    "Storyboards",
+    "Style Frames"
+   ],
+   "summary": "Product films tracing Extrem's innovations back to real expeditions.",
+   "format": "campaign",
+   "stats": [],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "Berghaus Extrem competes at the highest end of the outdoor market, where credibility matters. I worked on a series of product films combining archive expedition footage, athlete stories and new product visuals to demonstrate the thinking and experience behind the technology."
+     ]
+    },
+    {
+     "h": "Insight",
+     "p": [
+      "The range has a long history of expeditions and product innovations to draw on. We used that history as the foundation for the films."
+     ]
+    },
+    {
+     "h": "Direction",
+     "p": [
+      "Each film followed a real athlete and expedition, tracing the product innovations that came out of it and connecting them to the range today.",
+      "Archive footage, athlete voiceovers and hand-drawn technical illustrations helped tell each story before the product appeared on screen."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "h/berghaus-extrem.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-plane.webp",
+     "w": 800,
+     "h": 450
+    },
+    {
+     "src": "c/bx-next.webp",
+     "w": 800,
+     "h": 450
+    },
+    {
+     "src": "c/bx-mistral.webp",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-jacket.webp",
+     "w": 800,
+     "h": 450
+    },
+    {
+     "src": "c/bx-mtnguide.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-asgard.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-smock.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-filmgrid.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-jacketgrid.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-slides.jpg",
+     "w": 1920,
+     "h": 1080
+    },
+    {
+     "src": "c/bx-posters.jpg",
+     "w": 1920,
+     "h": 1080
+    }
+   ],
+   "year_sort": 2023,
+   "story": [
+    "Berghaus Extrem competes at the highest end of the outdoor market, where credibility matters. The range has a long history of expeditions and product innovation to draw on, and that history became the foundation for a series of product films.",
+    "Each film followed a real athlete and expedition, tracing the product innovations that came out of it and connecting them to the range today.",
+    "Archive footage, athlete voiceovers and hand-drawn technical illustrations told each story before the product appeared on screen. I worked on the art direction, design, storyboards and style frames."
+   ]
+  },
+  {
+   "slug": "speedo",
+   "title": "Speedo Projects",
+   "client": "Speedo",
+   "year": "2023",
+   "category": "Campaign & Creative",
+   "role": "Art direction, design, motion and retouching direction within creative teams",
+   "services": [
+    "Art Direction",
+    "Design",
+    "Motion",
+    "Retouching Direction",
+    "Campaign Toolkits"
+   ],
+   "summary": "Campaign art direction and toolkits, from elite racing to the local pool.",
+   "format": "campaign",
+   "stats": [],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "From Olympic finalists to families at the local pool, Speedo's campaigns spanned elite racing, shaping, kids and lifestyle. Each had its own audience and needed to work across dozens of formats and markets."
+     ]
+    },
+    {
+     "h": "Approach",
+     "p": [
+      "Working within creative teams, I art directed and designed campaign assets, directed retouching and developed motion for digital and social, keeping the work consistent across channels."
+     ]
+    },
+    {
+     "h": "Output",
+     "p": [
+      "Campaign toolkits across digital, social, OOH and retail."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "h/speedo.jpg",
+     "w": 2000,
+     "h": 1500
+    },
+    {
+     "src": "c/021-149.jpg",
+     "w": 1400,
+     "h": 757
+    },
+    {
+     "src": "c/022-151.jpg",
+     "w": 1269,
+     "h": 963
+    },
+    {
+     "src": "c/022-154.jpg",
+     "w": 1400,
+     "h": 787
+    },
+    {
+     "src": "c/022-155.jpg",
+     "w": 1122,
+     "h": 1270
+    },
+    {
+     "src": "c/022-156.jpg",
+     "w": 1086,
+     "h": 1369
+    },
+    {
+     "src": "c/022-157.jpg",
+     "w": 1400,
+     "h": 1360
+    }
+   ],
+   "year_sort": 2023,
+   "story": [
+    "From Olympic finalists to families at the local pool, Speedo's campaigns spanned elite racing, shaping, kids and lifestyle. Each had its own audience and needed to work across dozens of formats and markets.",
+    "Working within creative teams, I art directed and designed campaign assets, directed retouching and developed motion for digital and social.",
+    "The result was campaign toolkits across digital, social, OOH and retail, kept consistent across every channel."
+   ]
+  },
+  {
+   "slug": "berghaus-campaigns",
+   "title": "Berghaus Projects",
+   "client": "Berghaus",
+   "year": "2023",
+   "category": "Campaign & Creative",
+   "role": "Campaign art direction and assets within wider creative teams; tone of voice guidelines",
+   "services": [
+    "Art Direction",
+    "Design",
+    "Motion",
+    "Retouching Direction",
+    "Campaign Toolkits"
+   ],
+   "summary": "Campaign art direction for Berghaus, including Putting the Mother in Mother Nature.",
+   "format": "campaign",
+   "stats": [],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "From Putting the Mother in Mother Nature to seasonal campaigns and product launches, the work covered a broad mix of briefs for Berghaus."
+     ]
+    },
+    {
+     "h": "Approach",
+     "p": [
+      "Working within wider creative teams, I developed campaign art direction and assets across digital, social and OOH, and designed Berghaus's tone of voice guidelines."
+     ]
+    },
+    {
+     "h": "Output",
+     "p": [
+      "Campaigns spanning product launches, lifestyle and Putting the Mother in Mother Nature, across digital, social and OOH."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "h/berghaus-campaigns.jpg",
+     "w": 1402,
+     "h": 1122
+    },
+    {
+     "src": "c/023-160.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/024-161.jpg",
+     "w": 1400,
+     "h": 789
+    },
+    {
+     "src": "c/024-162.jpg",
+     "w": 1400,
+     "h": 789
+    },
+    {
+     "src": "c/024-164.jpg",
+     "w": 1400,
+     "h": 791
+    },
+    {
+     "src": "c/024-165.jpg",
+     "w": 1222,
+     "h": 1375
+    }
+   ],
+   "year_sort": 2023,
+   "story": [
+    "From Putting the Mother in Mother Nature to seasonal campaigns and product launches, my work for Berghaus covered a broad mix of briefs.",
+    "Working within wider creative teams, I developed campaign art direction and assets across digital, social and OOH, and designed Berghaus's tone of voice guidelines."
+   ]
+  },
+  {
+   "slug": "heist",
+   "title": "Incredible Foundations",
+   "client": "Heist",
+   "year": "2022",
+   "category": "Branding & Campaign Creative",
+   "role": "Led a full rebrand, plus ongoing creative direction across seasonal launches and on-set art direction",
+   "services": [
+    "Visual Identity",
+    "Design",
+    "Art Direction",
+    "Packaging",
+    "Ecom",
+    "Digital",
+    "Social",
+    "CRM"
+   ],
+   "summary": "Every other brand was selling fantasy. Heist was selling a better Tuesday.",
+   "format": "brand",
+   "stats": [],
+   "intro": [],
+   "sections": [
+    {
+     "h": "Challenge",
+     "p": [
+      "Heist made products designed around how women feel, not how they look to someone else. In a category defined by the male gaze, the products had real conviction, but the brand identity hadn't caught up. I led a full rebrand across identity, campaigns, packaging, web, CRM and social, plus ongoing creative direction across seasonal launches and on-set art direction."
+     ]
+    },
+    {
+     "h": "Insight",
+     "p": [
+      "Every other brand in the category was selling fantasy. Heist was selling a better Tuesday."
+     ]
+    },
+    {
+     "h": "Direction",
+     "p": [
+      "Confident without being loud, progressive without being preachy. Clean and direct where the category is fussy and decorative.",
+      "The logo's 'i' is shaped around the female form, a mix of curves and structure: a small signal that the brand was designed around women's bodies. Copy talks straight about comfort, function and the difference a great product makes to your day."
+     ]
+    }
+   ],
+   "features": [],
+   "images": [
+    {
+     "src": "h/heist.jpg",
+     "w": 1600,
+     "h": 2000
+    },
+    {
+     "src": "c/heist-logo.webp",
+     "w": 1956,
+     "h": 1100
+    },
+    {
+     "src": "c/025-168.jpg",
+     "w": 1400,
+     "h": 840
+    },
+    {
+     "src": "c/026-169.jpg",
+     "w": 1400,
+     "h": 787
+    },
+    {
+     "src": "c/026-170.jpg",
+     "w": 1400,
+     "h": 789
+    },
+    {
+     "src": "c/026-171.jpg",
+     "w": 1400,
+     "h": 791
+    },
+    {
+     "src": "c/026-172.jpg",
+     "w": 965,
+     "h": 948
+    },
+    {
+     "src": "c/027-180.jpg",
+     "w": 1005,
+     "h": 1400
+    },
+    {
+     "src": "c/027-181.jpg",
+     "w": 1012,
+     "h": 1400
+    },
+    {
+     "src": "c/027-182.jpg",
+     "w": 1011,
+     "h": 1400
+    },
+    {
+     "src": "c/027-183.jpg",
+     "w": 1011,
+     "h": 1400
+    },
+    {
+     "src": "c/027-185.jpg",
+     "w": 889,
+     "h": 1247
+    },
+    {
+     "src": "c/027-186.jpg",
+     "w": 967,
+     "h": 1400
+    },
+    {
+     "src": "c/027-187.jpg",
+     "w": 1010,
+     "h": 1400
+    },
+    {
+     "src": "c/027-188.jpg",
+     "w": 1008,
+     "h": 1400
+    },
+    {
+     "src": "c/027-189.jpg",
+     "w": 966,
+     "h": 1400
+    },
+    {
+     "src": "c/028-190.jpg",
+     "w": 1400,
+     "h": 789
+    },
+    {
+     "src": "c/028-192.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/028-194.jpg",
+     "w": 1400,
+     "h": 790
+    },
+    {
+     "src": "c/028-195.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/028-204.jpg",
+     "w": 1400,
+     "h": 789
+    },
+    {
+     "src": "c/028-205.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/028-209.jpg",
+     "w": 1400,
+     "h": 787
+    },
+    {
+     "src": "c/029-210.jpg",
+     "w": 980,
+     "h": 1400
+    },
+    {
+     "src": "c/029-211.jpg",
+     "w": 987,
+     "h": 1400
+    },
+    {
+     "src": "c/029-212.jpg",
+     "w": 979,
+     "h": 1400
+    },
+    {
+     "src": "c/029-213.jpg",
+     "w": 991,
+     "h": 1400
+    },
+    {
+     "src": "c/029-214.jpg",
+     "w": 1025,
+     "h": 1400
+    },
+    {
+     "src": "c/029-215.jpg",
+     "w": 974,
+     "h": 1400
+    },
+    {
+     "src": "c/029-216.jpg",
+     "w": 973,
+     "h": 1400
+    },
+    {
+     "src": "c/029-217.jpg",
+     "w": 878,
+     "h": 1206
+    },
+    {
+     "src": "c/029-218.jpg",
+     "w": 788,
+     "h": 1083
+    },
+    {
+     "src": "c/029-219.jpg",
+     "w": 1000,
+     "h": 1378
+    }
+   ],
+   "year_sort": 2022,
+   "story": [
+    "Heist made products designed around how women feel, not how they look to someone else. In a category defined by the male gaze, the products had real conviction, but the brand hadn't caught up.",
+    "Every other brand was selling fantasy. Heist was selling a better Tuesday. I led a full rebrand across identity, campaigns, packaging, web, CRM and social: confident without being loud, progressive without being preachy, clean and direct where the category is fussy.",
+    "The logo's 'i' is shaped around the female form, a mix of curves and structure, and a small signal that the brand was designed around women's bodies. Alongside the rebrand came ongoing creative direction across seasonal launches, and art direction on set."
+   ]
+  },
+  {
+   "slug": "emerge-festival",
+   "title": "Emerge Festival",
+   "client": "Emerge Festival",
+   "year": "2020 and earlier",
+   "category": "Brand & Campaign",
+   "role": "",
+   "services": [],
+   "summary": "",
+   "format": "archive",
+   "stats": [],
+   "intro": [
+    "Full visual identity for London's late-night festival, bringing together museums, galleries and youth culture."
+   ],
+   "sections": [],
+   "features": [],
+   "images": [
+    {
+     "src": "h/emerge-festival.jpg",
+     "w": 2000,
+     "h": 1125
+    },
+    {
+     "src": "c/030-222.jpg",
+     "w": 1400,
+     "h": 834
+    },
+    {
+     "src": "c/031-223.jpg",
+     "w": 1400,
+     "h": 1136
+    },
+    {
+     "src": "c/031-225.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/031-226.jpg",
+     "w": 1112,
+     "h": 627
+    }
+   ],
+   "year_sort": 2020
+  },
+  {
+   "slug": "livity",
+   "title": "Livity Brand",
+   "client": "Livity",
+   "year": "2020 and earlier",
+   "category": "Brand & Campaign",
+   "role": "",
+   "services": [],
+   "summary": "",
+   "format": "archive",
+   "stats": [],
+   "intro": [
+    "Part of the team behind Livity's rebrand: a visual identity for a youth culture agency, built to evolve with the community it represented."
+   ],
+   "sections": [],
+   "features": [],
+   "images": [
+    {
+     "src": "h/livity.jpg",
+     "w": 1672,
+     "h": 941
+    },
+    {
+     "src": "c/livity-logo-white.webp",
+     "w": 1650,
+     "h": 1100
+    },
+    {
+     "src": "c/livity-logo-blue.webp",
+     "w": 1818,
+     "h": 1100
+    },
+    {
+     "src": "c/livity-logo-photo.webp",
+     "w": 1818,
+     "h": 1100
+    },
+    {
+     "src": "c/livity-magazine.jpg",
+     "w": 1600,
+     "h": 900
+    },
+    {
+     "src": "c/032-243.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/032-247.jpg",
+     "w": 965,
+     "h": 948
+    }
+   ],
+   "year_sort": 2020
+  },
+  {
+   "slug": "max-coyote",
+   "title": "Max Coyote",
+   "client": "Max Coyote",
+   "year": "2020 and earlier",
+   "category": "Brand & Campaign",
+   "role": "",
+   "services": [],
+   "summary": "",
+   "format": "archive",
+   "stats": [],
+   "intro": [
+    "Brand identity for a fitness professional who wanted playful, punchy and gender neutral."
+   ],
+   "sections": [],
+   "features": [],
+   "images": [
+    {
+     "src": "h/max-coyote.jpg",
+     "w": 2000,
+     "h": 1125
+    },
+    {
+     "src": "c/maxcoyote-logo.webp",
+     "w": 1956,
+     "h": 1100
+    },
+    {
+     "src": "c/033-256.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/033-258.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/033-259.jpg",
+     "w": 1400,
+     "h": 788
+    }
+   ],
+   "year_sort": 2020
+  },
+  {
+   "slug": "berghaus-baltic",
+   "title": "Berghaus Baltic",
+   "client": "Berghaus",
+   "year": "2020 and earlier",
+   "category": "Brand & Campaign",
+   "role": "",
+   "services": [],
+   "summary": "",
+   "format": "archive",
+   "stats": [],
+   "intro": [
+    "Visual identity and social campaign for a Berghaus youth range, built around the tension between urban and outdoor, city streets and mountain tops."
+   ],
+   "sections": [],
+   "features": [],
+   "images": [
+    {
+     "src": "h/berghaus-baltic.jpg",
+     "w": 2000,
+     "h": 1125
+    },
+    {
+     "src": "c/034-264.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/034-266.jpg",
+     "w": 1400,
+     "h": 788
+    },
+    {
+     "src": "c/034-267.jpg",
+     "w": 1400,
+     "h": 788
+    }
+   ],
+   "year_sort": 2020
+  }
+ ],
+ "tiles": [
+  {
+   "src": "h/whering-brand.jpg",
+   "p": "whering-brand",
+   "w": 1600,
+   "h": 2000,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/worn-by-whering.jpg",
+   "p": "worn-by-whering",
+   "w": 1751,
+   "h": 2000,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/whering-product.jpg",
+   "p": "whering-product",
+   "w": 1666,
+   "h": 1875,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/open-wardrobes.jpg",
+   "p": "open-wardrobes",
+   "w": 1310,
+   "h": 2000,
+   "ink": "light",
+   "inkm": "light"
+  },
+  {
+   "src": "h/pentland-brands.jpg",
+   "p": "pentland-brands",
+   "w": 1672,
+   "h": 941,
+   "ink": "light",
+   "inkm": "light"
+  },
+  {
+   "src": "h/berghaus-extrem.jpg",
+   "p": "berghaus-extrem",
+   "w": 1920,
+   "h": 1080,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/speedo.jpg",
+   "p": "speedo",
+   "w": 2000,
+   "h": 1500,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/berghaus-campaigns.jpg",
+   "p": "berghaus-campaigns",
+   "w": 1402,
+   "h": 1122,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/heist.jpg",
+   "p": "heist",
+   "w": 1600,
+   "h": 2000,
+   "ink": "light",
+   "inkm": "light"
+  },
+  {
+   "src": "h/emerge-festival.jpg",
+   "p": "emerge-festival",
+   "w": 2000,
+   "h": 1125,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/livity.jpg",
+   "p": "livity",
+   "w": 1672,
+   "h": 941,
+   "ink": "dark",
+   "inkm": "light"
+  },
+  {
+   "src": "h/max-coyote.jpg",
+   "p": "max-coyote",
+   "w": 2000,
+   "h": 1125,
+   "ink": "dark",
+   "inkm": "dark"
+  },
+  {
+   "src": "h/berghaus-baltic.jpg",
+   "p": "berghaus-baltic",
+   "w": 2000,
+   "h": 1125,
+   "ink": "dark",
+   "inkm": "dark"
+  }
+ ],
+ "about": [
+  "I’m Siân, a UK-based designer and art director, shaping visual identities and building brand worlds for twelve years.",
+  "Working across brand, product and campaign, I’ve led rebrands for Whering, Heist and Pentland Brands, and most recently ran brand and product together as Design Director at Whering.",
+  "I like work with a point of view: culture, social change and brands with something to say."
+ ],
+ "rows": [
+  [
+   0
+  ],
+  [
+   1
+  ],
+  [
+   2
+  ],
+  [
+   3
+  ],
+  [
+   4
+  ],
+  [
+   5
+  ],
+  [
+   6
+  ],
+  [
+   7
+  ],
+  [
+   8
+  ],
+  [
+   9
+  ],
+  [
+   10
+  ],
+  [
+   11
+  ],
+  [
+   12
+  ]
+ ]
+};
+const P = Object.fromEntries(DATA.projects.map(p=>[p.slug,p]));
+const order = DATA.projects.map(p=>p.slug);
+const $ = s=>document.querySelector(s);
+const esc = s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tileFor = {}; DATA.tiles.forEach(t=>{(tileFor[t.p] ||= []).push(t.src)});
+let active=null;
+
+/* ---------- stream ---------- */
+let list=[], rows=[], N=0, shots=[];
+const pad=n=>String(n).padStart(2,'0');
+function render(){
+  // rows exactly as laid out in Figma: one picture per project
+  list=DATA.tiles;
+  rows=DATA.rows.map(r=>r.map(i=>list[i]));
+  N=rows.length;
+  $('#stream').innerHTML=rows.map((r,i)=>{const p=P[r[0].p];return `<a class="shot" href="#${r[0].p}" data-p="${r[0].p}" data-i="${i}" aria-label="${esc(p.title)}, ${esc(p.client)}, ${esc(p.year)}"><span class="pics">${r.map(t=>`<img src="${t.src}" width="${t.w}" height="${t.h}" alt="${esc(p.title)}" ${i>2?'loading="lazy"':''} decoding="async">`).join('')}</span><span class="shot-cap${r[0].ink==='dark'?' ink-dark':''}${r[0].inkm==='dark'?' inkm-dark':''}">${esc(p.title)}, ${esc(p.year)}</span></a>`}).join('');
+  shots=[...document.querySelectorAll('.shot')];
+  sizeShots();
+}
+function sizeShots(){
+  const vw=document.documentElement.clientWidth, vh=innerHeight, narrow=vw<720;
+  const W=narrow? vw*.92 : Math.min(vw*.92,845,vh), maxH=narrow? vh*.72 : vh*.96, gap=narrow?8:14;
+  document.documentElement.style.setProperty('--pair-gap',gap+'px');
+  shots.forEach((s,i)=>{
+    const r=rows[i], sumA=r.reduce((n,t)=>n+t.w/t.h,0);
+    let h=(W-gap*(r.length-1))/sumA; if(h>maxH) h=maxH;
+    [...s.querySelector('.pics').children].forEach((img,j)=>{const a=r[j].w/r[j].h; img.style.width=(h*a)+'px'; img.style.height=h+'px'; img.style.maxWidth='none'});
+  });
+  const first=shots[0].offsetHeight, last=shots[N-1].offsetHeight;
+  $('#stream').style.paddingTop=(vh-first)/2+'px'; $('#stream').style.paddingBottom=(vh-last)/2+'px';
+}
+render();
+let cur=-1;
+function focusShot(){
+  const mid=innerHeight/2; let best=0,bd=1e9;
+  shots.forEach((s,i)=>{const r=s.getBoundingClientRect();const d=Math.abs(r.top+r.height/2-mid);if(d<bd){bd=d;best=i}});
+  if(best===cur) return; cur=best;
+  shots.forEach((s,i)=>s.classList.toggle('on',i===best));
+  const p=P[shots[best].dataset.p];
+  $('#now').innerHTML=`<span class="count">${pad(best+1)}/${pad(N)}</span>&nbsp;&nbsp; <b>${esc(p.title)}</b>${p.title.includes(p.client)?'':', '+esc(p.client)}, ${esc(p.year)}`;
+}
+let ticking=false;
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{focusShot();ticking=false})}},{passive:true});
+addEventListener('resize',()=>{sizeShots();cur=-1;focusShot()});
+focusShot();
+$('#stream').addEventListener('click',e=>{
+  const s=e.target.closest('.shot'); if(!s) return; e.preventDefault();
+  if(+s.dataset.i!==cur){s.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});return}
+  openCase(s.dataset.p);
+});
+$('#btn-work').addEventListener('click',()=>closeAll());
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o&&!o.closest('#stream')){e.preventDefault();openCase(o.dataset.open)}});
+$('#m-home').addEventListener('click',()=>{closeAll();shots[0]&&shots[0].scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})});
+$('#m-index').addEventListener('click',()=>$('#btn-index').click());
+$('#m-about').addEventListener('click',()=>$('#btn-about').click());
+</script>
+<script>
+/* ---------- panels ---------- */
+const panels={index:$('#p-index'),about:$('#p-about'),case:$('#p-case')};
+function fitText(el,max){
+  if(!el||!el.offsetParent) return;
+  const cs=getComputedStyle(el.parentElement);
+  const avail=el.parentElement.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+  el.style.fontSize='100px';
+  const r=document.createRange(); r.selectNodeContents(el); const w=r.getBoundingClientRect().width;
+  el.style.fontSize=Math.min(max,100*avail/w*.98)+'px';
+}
+function fitHeads(){fitText(document.querySelector('.ab-title'),260)}
+addEventListener('resize',()=>requestAnimationFrame(fitHeads));
+document.fonts&&document.fonts.ready.then(fitHeads);
+function show(name){
+  document.body.classList.toggle('locked',!!name);
+  $('#btn-work').setAttribute('aria-pressed',!name);
+  $('#m-index').setAttribute('aria-pressed',name==='index');
+  $('#m-about').setAttribute('aria-pressed',name==='about');
+  Object.entries(panels).forEach(([n,el])=>{el.hidden=n!==name});
+  $('#btn-index').setAttribute('aria-pressed',name==='index');
+  $('#btn-about').setAttribute('aria-pressed',name==='about');
+  if(name) panels[name].scrollTop=0;
+  requestAnimationFrame(fitHeads);
+}
+function closeAll(){show(null);hidePeek();if(location.hash)history.replaceState(null,'',location.pathname+location.search)}
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeAll));
+$('#home').addEventListener('click',closeAll);
+addEventListener('keydown',e=>{if(e.key==='Escape')closeAll()});
+$('#btn-index').addEventListener('click',()=>panels.index.hidden?show('index'):closeAll());
+$('#btn-about').addEventListener('click',()=>panels.about.hidden?show('about'):closeAll());
+
+/* index */
+/* Index: Works grid, Featured / Archive */
+const homeImg={}; DATA.tiles.forEach(t=>{homeImg[t.p] ||= t});
+const featured=order.filter(s=>P[s].format!=='archive'), archive=order.filter(s=>P[s].format==='archive');
+const cap=p=>`${esc(p.title)}${p.title.includes(p.client)?'':' for '+esc(p.client)}, ${esc(p.year)}`;
+const card=s=>{const p=P[s],t=homeImg[s]||(p.images||[])[0];return `<button class="wk" data-open="${s}"><img src="${t.src}" width="${t.w}" height="${t.h}" alt="" loading="lazy" decoding="async"><span class="wk-cap">${cap(p)}</span></button>`};
+const blurb=p=>{if(p.story&&p.story.length)return esc(p.story[0]);const sec=(p.sections||[])[0];const t=sec&&(sec.p||sec.body||sec.paras);return esc(Array.isArray(t)&&t.length?t.join(' '):(p.intro||[]).join(' ')||p.summary||'')};
+const thumbs=s=>{const p=P[s],seen=new Set(),out=[];[...(p.images||[])].forEach(im=>{if(im&&!seen.has(im.src)&&out.length<5){seen.add(im.src);out.push(im)}});return out};
+$('#idx').innerHTML=`<h1 class="idx-head">Works by Siân</h1>
+<div class="wl">${order.map(s=>{const p=P[s];return `<button class="wl-row" data-open="${s}"><span class="wl-imgs">${thumbs(s).map(im=>`<img src="${im.src}" alt="" loading="lazy" decoding="async">`).join('')}</span><span class="wl-text"><span class="wl-t">${esc(p.title)}, ${esc(p.year)} <span class="wl-arrow" aria-hidden="true">→</span></span><span class="wl-d">${blurb(p)}</span></span></button>`}).join('')}</div>
+<div class="wk-grid" id="wk-all" hidden></div>`;
+// fill the columns left, right, left, right so the newest work reads first
+let wkCols=0;
+function buildWorks(){
+  const w=innerWidth, n=w<=600?2:w<=1000?3:4; if(n===wkCols) return; wkCols=n;
+  [['#wk-all',[...featured,...archive]]].forEach(([id,list])=>{
+    const cols=Array.from({length:n},()=>[]); list.forEach((s,i)=>cols[i%n].push(card(s)));
+    $(id).innerHTML=cols.map(c=>`<div class="wk-col">${c.join('')}</div>`).join('');
+  });
+}
+buildWorks(); addEventListener('resize',buildWorks);
+
+const peek=$('#peek'), peekImg=peek.querySelector('img');
+function hidePeek(){peek.style.opacity=0}
+$('#idx').addEventListener('pointermove',e=>{
+  const row=e.target.closest('[data-peek]'); if(!row){hidePeek();return}
+  const src=(tileFor[row.dataset.peek]||[])[0]; if(peekImg.getAttribute('src')!==src) peekImg.src=src;
+  const pw=peek.offsetWidth, ph=peek.offsetHeight||pw;
+  peek.style.left=(e.clientX+pw+32<innerWidth? e.clientX+32 : e.clientX-pw-32)+'px'; peek.style.top=Math.max(12,Math.min(e.clientY-ph/2,innerHeight-ph-12))+'px'; peek.style.opacity=1;
+});
+$('#idx').addEventListener('pointerleave',hidePeek);
+
+/* about */
+$('#about').className='wrap';
+$('#about').innerHTML=`<h2 class="ab-title">Siân Louise Spicer</h2>
+<div class="ab-intro">${DATA.about.map(p=>`<p>${esc(p)}</p>`).join('')}</div>
+<div class="cols ab-cols">
+  <div><h3>Background</h3><p>Fine art trained, with 12+ years across design and art direction. Most recently Design Director at Whering, leading brand and product together.</p></div>
+  <div><h3>What I do</h3><ul><li>Creative direction</li><li>Art direction</li><li>Graphic and brand design</li><li>Product and UX/UI design</li><li>Brand strategy and identity</li><li>Campaign concepts</li><li>Photo, video and motion</li><li>Packaging, print and editorial</li><li>Design systems and toolkits</li></ul></div>
+  <div><h3>Selected clients</h3><ul><li>Whering</li><li>Pentland Brands</li><li>Berghaus</li><li>Speedo</li><li>Heist</li><li>Emerge Festival</li><li>Zinc Network</li><li>Culture24</li><li>Livity</li></ul></div>
+  <div><h3>Get in touch</h3><div class="ab-mail"><span id="addr">hello@worksbysian.com</span><button class="label" id="copy">Copy email</button></div><p style="margin-top:1em">West Sussex, UK<br>Available for freelance projects</p></div>
+</div>`;
+$('#copy').addEventListener('click',async e=>{
+  try{await navigator.clipboard.writeText('hello@worksbysian.com');e.target.textContent='Copied'}
+  catch{const r=document.createRange();r.selectNodeContents($('#addr'));getSelection().removeAllRanges();getSelection().addRange(r);e.target.textContent='Selected, press copy'}
+});
+
+/* case study */
+function sec(h,body){return `<section class="cs-sec"><h3 class="label">${esc(h)}</h3><div>${body}</div></section>`}
+const paras=a=>(a||[]).map(x=>`<p>${esc(x)}</p>`).join('');
+function col(head,body){return `<div>${head?`<h3>${esc(head)}</h3>`:''}${body}</div>`}
+function openCase(slug,fi=-1){
+  const p=P[slug]; if(!p) return;
+  const feats=p.features||[], f=fi>=0?feats[fi]:null;
+  const imgs=(f?f.images:p.images)||[], n=imgs.length;
+  // copy columns: the project's own sections (or intro), then a details column
+  let sections=p.sections.length? p.sections.map(s=>col(s.h,paras(s.p))) : (p.intro.length? [col('',paras(p.intro))] : []);
+  if(p.story&&p.story.length) sections=p.story.map(t=>col('',`<p>${esc(t)}</p>`));
+  if(f) sections=[col('Context',`<p>${esc(f.context)}</p>`),col('Approach',`<p>${esc(f.approach)}</p>`),col('Outcome',`<ul>${(f.outcome_points||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>${f.outcome?`<p>${esc(f.outcome)}</p>`:''}${f.next?`<p><b>Next:</b> ${esc(f.next)}</p>`:''}`)];
+  const tabs=feats.length?`<div class="cs-tabs" role="tablist"><button role="tab" data-feat="-1" aria-selected="${fi<0}">Overview</button>${feats.map((x,i)=>`<button role="tab" data-feat="${i}" aria-selected="${fi===i}">${esc(x.title)}</button>`).join('')}</div>`:'';
+  const R=p.results;
+  const disc=(p.services&&p.services.length)?p.services:[p.category];
+  const details=`<div class="cs-details"><p class="cs-client"><b>Client:</b> ${esc(p.client)}, ${esc(p.year)}</p><ul class="cs-disc">${disc.map(d=>`<li>${esc(d)}</li>`).join('')}</ul></div>`;
+  const switcher=feats.length?`<div class="cs-switch"><h3>Projects</h3><ul role="tablist">${[{title:'Overview'},...feats].map((x,i)=>`<li><button role="tab" data-feat="${i-1}" aria-selected="${fi===i-1}">${esc(x.title)}</button></li>`).join('')}</ul>${f?'':`<dl><div><dt>Year</dt><dd>${esc(p.year)}</dd></div><div><dt>Disciplines</dt><dd>${esc((p.services||[]).join(', '))}</dd></div></dl>`}</div>`:'';
+  const last=details;
+  let h=`<section class="cs-pin" id="cs-pin"><div class="cs-stage" id="cs-stage">
+    <header class="cs-top"><div><h1 class="cs-title">${esc(p.title)}</h1></div>${p.summary?`<p class="cs-sum">${esc(p.summary)}</p>`:''}</header>
+    <div class="cs-strip-wrap" id="cs-wrap" tabindex="0" aria-label="${esc(p.title)} images"><div class="cs-track" id="cs-track">${imgs.map((im,i)=>`<img src="${im.src}" width="${im.w}" height="${im.h}" alt="${esc(p.title)}, image ${i+1} of ${n}" decoding="async" draggable="false">`).join('')}</div></div>
+    ${tabs}<div class="cs-prog" aria-hidden="true"><i id="cs-bar"></i></div>
+    <div class="cols cs-cols">${sections.join('')}${last}</div>
+  </div></section>`;
+  const nx=order[(order.indexOf(slug)+1)%order.length];
+  h+=`<button class="cs-next" data-open="${nx}"><span class="label">Next project</span><span class="t">${esc(P[nx].title)}</span></button>`;
+  $('#case').innerHTML=h; $('#case-bar').textContent='';
+  show('case'); hidePeek();
+  history.replaceState(null,'','#'+slug);
+  $('#case').querySelectorAll('[data-feat]').forEach(b=>b.addEventListener('click',()=>openCase(slug,+b.dataset.feat)));
+  layoutPin();
+  $('#cs-track').querySelectorAll('img').forEach(im=>im.addEventListener('load',layoutPin,{once:true}));
+}
+/* pinned case study: scrolling down slides the images sideways while header and copy stay on screen */
+let pin={on:false,start:0,dist:0};
+function layoutPin(){
+  const panel=$('#p-case'), sec=$('#cs-pin'); if(!sec||panel.hidden) return;
+  const stage=$('#cs-stage'), wrap=$('#cs-wrap'), track=$('#cs-track'), art=$('#case');
+  const bar=panel.querySelector('.panel-bar').offsetHeight, ph=innerHeight-bar;
+  art.classList.remove('flow'); stage.style.height=ph+'px'; stage.style.top=bar+'px';
+  let flow=innerWidth<900||ph<560||reduce;
+  if(!flow && $('.cs-cols').offsetHeight>ph*.46) flow=true;
+  if(flow){art.classList.add('flow');stage.style.height='';sec.style.height='';track.style.transform='';pin.on=false;$('#cs-bar').style.width='0';return}
+  const dist=Math.max(0,track.scrollWidth-wrap.clientWidth);
+  sec.style.height=(ph+dist)+'px';
+  pin={on:true,start:sec.offsetTop-bar,dist};
+  movePin();
+}
+function movePin(){
+  if(!pin.on) return;
+  const st=$('#p-case').scrollTop, prog=pin.dist? Math.max(0,Math.min(1,(st-pin.start)/pin.dist)) : 0;
+  const x=prog*pin.dist;
+  $('#cs-track').style.transform=`translate3d(${-x}px,0,0)`;
+  $('#cs-bar').style.width=(prog*100)+'%';
+}
+$('#p-case').addEventListener('scroll',()=>requestAnimationFrame(movePin),{passive:true});
+/* sideways gestures over the strip move it too, by driving the same scroll position */
+function nudgePin(dx){
+  const panel=$('#p-case'), lo=pin.start, hi=pin.start+pin.dist, st=panel.scrollTop;
+  const next=Math.max(lo,Math.min(hi,st+dx));
+  if(next===st) return false;
+  panel.scrollTop=next; return true;
+}
+$('#p-case').addEventListener('wheel',e=>{
+  if(!pin.on||!e.target.closest('#cs-wrap')) return;
+  const dx=e.deltaX*(e.deltaMode===1?40:1);
+  if(Math.abs(dx)<=Math.abs(e.deltaY)) return;
+  e.preventDefault(); nudgePin(dx);
+},{passive:false});
+let tx0=null;
+$('#p-case').addEventListener('touchstart',e=>{tx0=(pin.on&&e.target.closest('#cs-wrap'))?{x:e.touches[0].clientX,y:e.touches[0].clientY,lock:null}:null},{passive:true});
+$('#p-case').addEventListener('touchmove',e=>{
+  if(!tx0) return;
+  const t=e.touches[0], dx=tx0.x-t.clientX, dy=tx0.y-t.clientY;
+  if(tx0.lock===null && Math.abs(dx)+Math.abs(dy)>8) tx0.lock=Math.abs(dx)>Math.abs(dy)?'x':'y';
+  if(tx0.lock!=='x') return;
+  e.preventDefault(); nudgePin(dx); tx0.x=t.clientX; tx0.y=t.clientY;
+},{passive:false});
+$('#p-case').addEventListener('keydown',e=>{
+  if(!pin.on||!e.target.closest('#cs-wrap')) return;
+  const step={ArrowRight:1,ArrowLeft:-1}[e.key]; if(!step) return;
+  e.preventDefault(); nudgePin(step*innerWidth*.4);
+});
+addEventListener('resize',()=>{if(!$('#p-case').hidden) layoutPin()});
+document.fonts&&document.fonts.ready.then(()=>{if(!$('#p-case').hidden) layoutPin()});
+const h0=location.hash.slice(1); if(P[h0]) openCase(h0);
+</script>
+
+
+
+</body></html>
