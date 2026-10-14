@@ -309,7 +309,7 @@ nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(
 <style>
 /* stream */
 html,body{height:auto}
-html{scroll-snap-type:y mandatory}
+html{scroll-snap-type:y proximity}
 body{overflow-y:auto;overflow-x:hidden;background:var(--wall)}
 body.locked{overflow:hidden}
 .stream{display:flex;flex-direction:column;align-items:center;gap:6vh;padding-block:calc(50vh - 34vh) calc(50vh - 34vh)}
@@ -366,12 +366,14 @@ body.locked{overflow:hidden}
 @media (min-width:721px){.foot{top:0;bottom:auto;padding:calc(env(safe-area-inset-top,0px) + 20px) var(--gut) 0}}
 @media (max-width:720px){.shot-cap{left:12px;bottom:10px;font-size:12px}}
 .foot .now{display:none!important}
+/* big page titles one step lighter: Medium instead of Bold */
+.t-grotesk :is(.idx-head,.cs-title,.ab-title,.cs-next .t){font-weight:500!important;letter-spacing:-.04em}
 /* homepage: big corner type (name, vertical email, vertical About, Index) */
 .hm{display:none}
 @media (min-width:721px){
   .line,.foot{display:none!important}
   .hm{display:block}
-  .hm>*{position:fixed;z-index:20;font-family:var(--serif);font-weight:700;letter-spacing:-.035em;line-height:.9;color:var(--ink);text-decoration:none;font-size:clamp(28px,2.7vw,54px);white-space:nowrap}
+  .hm>*{position:fixed;z-index:20;font-family:var(--serif);font-weight:700;letter-spacing:-.035em;line-height:.9;color:#fff;mix-blend-mode:difference;text-decoration:none;font-size:clamp(28px,2.7vw,54px);white-space:nowrap}
   .hm-name{left:var(--gut);top:calc(env(safe-area-inset-top,0px) + clamp(18px,2.4vw,40px))}
   .hm-mail{right:var(--gut);top:calc(env(safe-area-inset-top,0px) + clamp(18px,2.4vw,40px));writing-mode:vertical-rl}
   .hm-about{left:var(--gut);bottom:clamp(18px,2.4vw,40px);writing-mode:vertical-rl;transform:rotate(180deg)}
@@ -381,8 +383,8 @@ body.locked{overflow:hidden}
 }
 body.locked .hm{display:none}
 /* images grow as they reach the middle of the screen */
-.shot{transform-origin:50% 50%;will-change:transform}
-.shot-cap{opacity:0;transition:opacity .35s ease}
+.shot{transform-origin:50% 50%;backface-visibility:hidden}
+.shot-cap{opacity:0;transition:opacity .35s ease;color:#fff!important;mix-blend-mode:difference}
 .shot.on .shot-cap{opacity:1}
 </style>
 
@@ -1881,19 +1883,24 @@ function focusShot(){
   const p=P[shots[best].dataset.p];
   $('#now').innerHTML=`<span class="count">${pad(best+1)}/${pad(N)}</span>&nbsp;&nbsp; <b>${esc(p.title)}</b>${p.title.includes(p.client)?'':', '+esc(p.client)}, ${esc(p.year)}`;
 }
+let shotPos=[];
+function measureShots(){
+  shotPos=shots.map(sh=>{let top=0,el=sh;while(el){top+=el.offsetTop;el=el.offsetParent}return {top,h:sh.offsetHeight}});
+}
 function scaleShots(){
   if(reduce) return;
+  if(shotPos.length!==shots.length) measureShots();
   const vh=innerHeight, mid=vh/2, sy=scrollY;
-  shots.forEach(sh=>{
-    // unscaled position from layout, so the transform never feeds back into itself
-    let top=0,el=sh; while(el){top+=el.offsetTop;el=el.offsetParent}
-    const h=sh.offsetHeight, c=top-sy+h/2, off=c-mid;
+  for(let i=0;i<shots.length;i++){
+    const {top,h}=shotPos[i], off=top-sy+h/2-mid;
+    if(Math.abs(off)>vh*1.6){continue}
     const d=Math.min(1,Math.abs(off)/(vh*.8)), k=1-d*.32;
-    // pull smaller images towards the middle so they still peek in at the edges
     const ty=-Math.sign(off)*h*(1-k)/2;
-    sh.style.transform=`translate3d(0,${ty.toFixed(1)}px,0) scale(${k.toFixed(4)})`;
-  });
+    shots[i].style.transform=`translate3d(0,${ty.toFixed(1)}px,0) scale(${k.toFixed(4)})`;
+  }
 }
+addEventListener('resize',()=>{measureShots()});
+addEventListener('load',()=>{measureShots();scaleShots()});
 let ticking=false;
 addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{focusShot();scaleShots();ticking=false})}},{passive:true});
 addEventListener('resize',()=>requestAnimationFrame(scaleShots));
