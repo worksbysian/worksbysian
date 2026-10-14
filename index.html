@@ -295,8 +295,8 @@ nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(
 
 /* Works list: images fill the left half, title and description on the right */
 .wl{border-bottom:1px solid var(--ink)}
-.wl-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);align-items:start;width:100%;text-align:left;padding:clamp(12px,1.2vw,18px) 0 clamp(28px,3.4vw,56px);border-top:1px solid var(--ink);color:var(--ink)}
-.wl-imgs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(4px,.4vw,8px)}
+.wl-row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);align-items:start;width:100%;text-align:left;padding:clamp(12px,1.2vw,18px) 0 clamp(28px,3.4vw,56px);border-top:1px solid var(--ink);color:var(--ink)}
+.wl-imgs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(4px,.4vw,8px)}
 .wl-imgs img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:var(--wall-side)}
 .wl-text{display:block;font-size:clamp(13px,1vw,17px);line-height:1.35;letter-spacing:-.005em;max-width:none}
 .wl-t{display:block;font-weight:700;margin-bottom:.15em}
@@ -1983,7 +1983,7 @@ const featured=order.filter(s=>P[s].format!=='archive'), archive=order.filter(s=
 const cap=p=>`${esc(p.title)}${p.title.includes(p.client)?'':' for '+esc(p.client)}, ${esc(p.year)}`;
 const card=s=>{const p=P[s],t=homeImg[s]||(p.images||[])[0];return `<button class="wk" data-open="${s}"><img src="${t.src}" width="${t.w}" height="${t.h}" alt="" loading="lazy" decoding="async"><span class="wk-cap">${cap(p)}</span></button>`};
 const blurb=p=>{if(p.story&&p.story.length)return esc(p.story[0]);const sec=(p.sections||[])[0];const t=sec&&(sec.p||sec.body||sec.paras);return esc(Array.isArray(t)&&t.length?t.join(' '):(p.intro||[]).join(' ')||p.summary||'')};
-const thumbs=s=>{const p=P[s],seen=new Set(),out=[];if(p.thumbs&&p.thumbs.length)return p.thumbs.map(src=>({src}));[...(p.images||[])].forEach(im=>{if(im&&!seen.has(im.src)&&out.length<5){seen.add(im.src);out.push(im)}});return out};
+const thumbs=s=>{const p=P[s],seen=new Set(),out=[];if(p.thumbs&&p.thumbs.length)return p.thumbs.slice(0,4).map(src=>({src}));[...(p.images||[])].forEach(im=>{if(im&&!seen.has(im.src)&&out.length<4){seen.add(im.src);out.push(im)}});return out};
 $('#idx').innerHTML=`<h1 class="idx-head">Works by Siân</h1>
 <div class="wl">${order.map(s=>{const p=P[s];return `<button class="wl-row" data-open="${s}"><span class="wl-imgs">${thumbs(s).map(im=>`<img src="${im.src}" alt="" loading="lazy" decoding="async">`).join('')}</span><span class="wl-text"><span class="wl-t">${esc(p.title)}, ${esc(p.year)} <span class="wl-arrow" aria-hidden="true">→</span></span><span class="wl-d">${blurb(p)}</span></span></button>`}).join('')}</div>
 <div class="wk-grid" id="wk-all" hidden></div>`;
