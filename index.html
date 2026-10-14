@@ -309,7 +309,7 @@ nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(
 <style>
 /* stream */
 html,body{height:auto}
-html{scroll-snap-type:y proximity}
+html{scroll-snap-type:none}
 body{overflow-y:auto;overflow-x:hidden;background:var(--wall)}
 body.locked{overflow:hidden}
 .stream{display:flex;flex-direction:column;align-items:center;gap:6vh;padding-block:calc(50vh - 34vh) calc(50vh - 34vh)}
@@ -1903,6 +1903,28 @@ addEventListener('resize',()=>{measureShots()});
 addEventListener('load',()=>{measureShots();scaleShots()});
 let ticking=false;
 addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{focusShot();scaleShots();ticking=false})}},{passive:true});
+/* quick custom snap: once scrolling pauses, glide the nearest image to the centre */
+let snapT=null, snapAnim=null;
+function nearestTarget(){
+  if(shotPos.length!==shots.length) measureShots();
+  const mid=scrollY+innerHeight/2; let best=null,bd=1e9;
+  shotPos.forEach(({top,h})=>{const d=Math.abs(top+h/2-mid); if(d<bd){bd=d;best=top+h/2-innerHeight/2}});
+  return best;
+}
+function glideTo(y,ms=260){
+  cancelAnimationFrame(snapAnim);
+  const y0=scrollY, dy=y-y0; if(Math.abs(dy)<2) return;
+  const t0=performance.now();
+  const step=t=>{const p=Math.min(1,(t-t0)/ms), e=1-Math.pow(1-p,3); scrollTo(0,y0+dy*e); if(p<1) snapAnim=requestAnimationFrame(step); else snapAnim=null};
+  snapAnim=requestAnimationFrame(step);
+}
+function scheduleSnap(){
+  if(reduce||document.body.classList.contains('locked')) return;
+  clearTimeout(snapT);
+  snapT=setTimeout(()=>{const y=nearestTarget(); if(y!=null) glideTo(Math.max(0,y))},90);
+}
+addEventListener('scroll',()=>{if(!snapAnim) scheduleSnap()},{passive:true});
+['wheel','touchstart','keydown','pointerdown'].forEach(ev=>addEventListener(ev,()=>{if(snapAnim){cancelAnimationFrame(snapAnim);snapAnim=null}},{passive:true}));
 addEventListener('resize',()=>requestAnimationFrame(scaleShots));
 scaleShots();
 addEventListener('resize',()=>{sizeShots();cur=-1;focusShot()});
