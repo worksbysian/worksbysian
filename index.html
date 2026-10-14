@@ -1213,10 +1213,10 @@ const DATA = {
   {
    "slug": "berghaus-campaigns",
    "thumbs": [
-    "t/berghaus-campaigns-1.jpg",
-    "t/berghaus-campaigns-2.jpg",
-    "t/berghaus-campaigns-3.jpg",
-    "t/berghaus-campaigns-4.jpg"
+    "t/berghaus-campaigns-1.jpg?v=2",
+    "t/berghaus-campaigns-2.jpg?v=2",
+    "t/berghaus-campaigns-3.jpg?v=2",
+    "t/berghaus-campaigns-4.jpg?v=2"
    ],
    "title": "Berghaus Projects",
    "client": "Berghaus",
@@ -2004,7 +2004,16 @@ function fitText(el,max){
   const r=document.createRange(); r.selectNodeContents(el); const w=r.getBoundingClientRect().width;
   el.style.fontSize=Math.min(max,100*avail/w*.98)+'px';
 }
-function fitHeads(){fitText(document.querySelector('.ab-title'),260)}
+function fitIdxHead(){
+  const h=document.querySelector('.idx-head'), t=document.querySelector('.wl-text');
+  if(!h||!t||!h.offsetParent) return;
+  if(innerWidth<=900){h.style.fontSize='';return}
+  const target=t.getBoundingClientRect().width;
+  h.style.fontSize='100px';
+  const r=document.createRange(); r.selectNodeContents(h); const w=r.getBoundingClientRect().width;
+  h.style.fontSize=(100*target/w)+'px';
+}
+function fitHeads(){fitText(document.querySelector('.ab-title'),260);fitIdxHead()}
 addEventListener('resize',()=>requestAnimationFrame(fitHeads));
 document.fonts&&document.fonts.ready.then(fitHeads);
 function show(name){
