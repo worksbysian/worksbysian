@@ -384,7 +384,8 @@ body.locked{overflow:hidden}
 body.locked .hm{display:none}
 /* images grow as they reach the middle of the screen */
 .shot{transform-origin:50% 50%;backface-visibility:hidden}
-.shot-cap{opacity:0;transition:opacity .35s ease;color:#fff!important;mix-blend-mode:difference}
+.shot-cap{opacity:0;transition:opacity .35s ease;color:#fff!important;mix-blend-mode:difference;left:auto!important;right:16px;font-weight:500!important}
+@media (max-width:720px){.shot-cap{right:12px}}
 .shot.on .shot-cap{opacity:1}
 </style>
 
