@@ -174,7 +174,7 @@ nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(
 .cs-strip-wrap{flex:0 1 auto;height:min(55vh,620px);min-height:22vh;overflow:hidden;margin-inline:calc(-1*var(--gut));outline:none}
 #case:not(.flow) .cs-strip-wrap{touch-action:pan-y}
 .cs-track{display:flex;gap:14px;height:100%;padding-inline:var(--gut);will-change:transform;width:max-content}
-.cs-track img{height:100%;width:auto;max-width:none;flex:none;background:var(--wall-side);user-select:none;-webkit-user-drag:none}
+.cs-track :is(img,video){height:100%;width:auto;max-width:none;flex:none;background:var(--wall-side);user-select:none;-webkit-user-drag:none}
 .cs-prog{display:none}
 .cs-prog i{display:block;height:1px;width:0;background:var(--ink)}
 .cs-cols{flex:none}
@@ -204,7 +204,7 @@ nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(
 #case.flow .cs-strip-wrap{flex:none;height:min(56vh,600px);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none}
 #case.flow .cs-strip-wrap::-webkit-scrollbar{display:none}
 #case.flow .cs-track{transform:none!important}
-#case.flow .cs-track img{scroll-snap-align:none}
+#case.flow .cs-track :is(img,video){scroll-snap-align:none}
 #case.flow .cs-strip-wrap{scroll-snap-type:none}
 #case.flow .cs-prog{display:none}
 @media (max-width:600px){#case.flow .cs-strip-wrap{height:48vh}#case.flow .cs-track{gap:8px}}
@@ -297,14 +297,14 @@ nav button:hover::after,nav button[aria-pressed="true"]::after{transform:scaleX(
 .wl{border-bottom:1px solid var(--ink)}
 .wl-row{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:clamp(20px,3vw,56px);align-items:start;width:100%;text-align:left;padding:clamp(12px,1.2vw,18px) 0 clamp(28px,3.4vw,56px);border-top:1px solid var(--ink);color:var(--ink)}
 .wl-imgs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(4px,.4vw,8px)}
-.wl-imgs img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--wall-side)}
+.wl-imgs :is(img,video){display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--wall-side)}
 .wl-text{display:block;font-size:clamp(13px,1vw,17px);line-height:1.35;letter-spacing:-.005em;max-width:none}
 .wl-t{display:block;font-weight:700;margin-bottom:.15em}
 .wl-arrow{display:inline-block;transition:transform .25s ease}
 .wl-row:hover .wl-arrow{transform:translateX(4px)}
 .wl-d{display:block;font-weight:400}
 @media (max-width:900px){.wl-row{grid-template-columns:minmax(0,1fr);gap:14px}}
-@media (max-width:600px){.wl-imgs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none;overscroll-behavior-x:contain}.wl-imgs::-webkit-scrollbar{display:none}.wl-imgs img{flex:none;width:62vw;scroll-snap-align:start}}
+@media (max-width:600px){.wl-imgs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--gut));padding-inline:var(--gut);scroll-padding-inline:var(--gut);scrollbar-width:none;overscroll-behavior-x:contain}.wl-imgs::-webkit-scrollbar{display:none}.wl-imgs :is(img,video){flex:none;width:62vw;scroll-snap-align:start}}
 </style>
 <style>
 /* stream */
@@ -1211,7 +1211,12 @@ const DATA = {
   },
   {
    "slug": "berghaus-campaigns",
-   "thumbs": ["t/berghaus-campaigns-1.jpg", "t/berghaus-campaigns-2.jpg", "t/berghaus-campaigns-3.jpg", "t/berghaus-campaigns-4.jpg"],
+   "thumbs": [
+    "t/berghaus-campaigns-1.jpg",
+    "t/berghaus-campaigns-2.jpg",
+    "t/berghaus-campaigns-3.jpg",
+    "t/berghaus-campaigns-4.jpg"
+   ],
    "title": "Berghaus Projects",
    "client": "Berghaus",
    "year": "2023",
@@ -1289,7 +1294,12 @@ const DATA = {
   },
   {
    "slug": "heist",
-   "thumbs": ["t/heist-1.jpg", "t/heist-2.jpg", "t/heist-3.jpg", "t/heist-4.jpg"],
+   "thumbs": [
+    "t/heist-1.jpg",
+    "t/heist-2.jpg",
+    "t/heist-3.jpg",
+    "t/heist-4.jpg"
+   ],
    "title": "Incredible Foundations",
    "client": "Heist",
    "year": "2022",
@@ -1507,7 +1517,12 @@ const DATA = {
   },
   {
    "slug": "emerge-festival",
-   "thumbs": ["t/emerge-festival-1.jpg", "t/emerge-festival-2.jpg", "t/emerge-festival-3.jpg", "t/emerge-festival-4.jpg"],
+   "thumbs": [
+    "v/emerge-lead-thumb.mp4",
+    "t/emerge-festival-4.jpg",
+    "v/emerge-logo-thumb.mp4",
+    "t/emerge-festival-2.jpg"
+   ],
    "title": "Emerge Festival",
    "client": "Emerge Festival",
    "year": "2020 and earlier",
@@ -1523,6 +1538,18 @@ const DATA = {
    "sections": [],
    "features": [],
    "images": [
+    {
+     "src": "v/emerge-lead.mp4",
+     "w": 1920,
+     "h": 1080,
+     "poster": "v/emerge-lead.jpg"
+    },
+    {
+     "src": "v/emerge-logo.mp4",
+     "w": 1920,
+     "h": 1080,
+     "poster": "v/emerge-logo.jpg"
+    },
     {
      "src": "h/emerge-festival.jpg",
      "w": 2000,
@@ -1553,7 +1580,12 @@ const DATA = {
   },
   {
    "slug": "livity",
-   "thumbs": ["t/livity-1.jpg", "t/livity-2.jpg", "t/livity-3.jpg", "t/livity-4.jpg"],
+   "thumbs": [
+    "t/livity-1.jpg",
+    "t/livity-2.jpg",
+    "t/livity-3.jpg",
+    "t/livity-4.jpg"
+   ],
    "title": "Livity Brand",
    "client": "Livity",
    "year": "2020 and earlier",
@@ -1609,7 +1641,12 @@ const DATA = {
   },
   {
    "slug": "max-coyote",
-   "thumbs": ["t/max-coyote-1.jpg", "t/max-coyote-2.jpg", "t/max-coyote-3.jpg", "t/max-coyote-4.jpg"],
+   "thumbs": [
+    "t/max-coyote-1.jpg",
+    "t/max-coyote-2.jpg",
+    "t/max-coyote-3.jpg",
+    "t/max-coyote-4.jpg"
+   ],
    "title": "Max Coyote",
    "client": "Max Coyote",
    "year": "2020 and earlier",
@@ -1655,7 +1692,12 @@ const DATA = {
   },
   {
    "slug": "berghaus-baltic",
-   "thumbs": ["t/berghaus-baltic-1.jpg", "t/berghaus-baltic-2.jpg", "t/berghaus-baltic-3.jpg", "t/berghaus-baltic-4.jpg"],
+   "thumbs": [
+    "t/berghaus-baltic-1.jpg",
+    "t/berghaus-baltic-2.jpg",
+    "t/berghaus-baltic-3.jpg",
+    "t/berghaus-baltic-4.jpg"
+   ],
    "title": "Berghaus Baltic",
    "client": "Berghaus",
    "year": "2020 and earlier",
@@ -1991,7 +2033,7 @@ const card=s=>{const p=P[s],t=homeImg[s]||(p.images||[])[0];return `<button clas
 const blurb=p=>{if(p.story&&p.story.length)return esc(p.story[0]);const sec=(p.sections||[])[0];const t=sec&&(sec.p||sec.body||sec.paras);return esc(Array.isArray(t)&&t.length?t.join(' '):(p.intro||[]).join(' ')||p.summary||'')};
 const thumbs=s=>{const p=P[s],seen=new Set(),out=[];if(p.thumbs&&p.thumbs.length)return p.thumbs.slice(0,4).map(src=>({src}));[...(p.images||[])].forEach(im=>{if(im&&!seen.has(im.src)&&out.length<4){seen.add(im.src);out.push(im)}});return out};
 $('#idx').innerHTML=`<h1 class="idx-head">Works by Siân</h1>
-<div class="wl">${order.map(s=>{const p=P[s];return `<button class="wl-row" data-open="${s}"><span class="wl-imgs">${thumbs(s).map(im=>`<img src="${im.src}" alt="" loading="lazy" decoding="async">`).join('')}</span><span class="wl-text"><span class="wl-t">${esc(p.title)}, ${esc(p.year)} <span class="wl-arrow" aria-hidden="true">→</span></span><span class="wl-d">${blurb(p)}</span></span></button>`}).join('')}</div>
+<div class="wl">${order.map(s=>{const p=P[s];return `<button class="wl-row" data-open="${s}"><span class="wl-imgs">${thumbs(s).map(im=>/\.mp4$/.test(im.src)?`<video src="${im.src}" poster="${im.src.replace('-thumb.mp4','.jpg')}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>`:`<img src="${im.src}" alt="" loading="lazy" decoding="async">`).join('')}</span><span class="wl-text"><span class="wl-t">${esc(p.title)}, ${esc(p.year)} <span class="wl-arrow" aria-hidden="true">→</span></span><span class="wl-d">${blurb(p)}</span></span></button>`}).join('')}</div>
 <div class="wk-grid" id="wk-all" hidden></div>`;
 // fill the columns left, right, left, right so the newest work reads first
 let wkCols=0;
@@ -2049,7 +2091,7 @@ function openCase(slug,fi=-1){
   const last=details;
   let h=`<section class="cs-pin" id="cs-pin"><div class="cs-stage" id="cs-stage">
     <header class="cs-top"><div><h1 class="cs-title">${esc(p.title)}</h1></div>${p.summary?`<p class="cs-sum">${esc(p.summary)}</p>`:''}</header>
-    <div class="cs-strip-wrap" id="cs-wrap" tabindex="0" aria-label="${esc(p.title)} images"><div class="cs-track" id="cs-track">${imgs.map((im,i)=>`<img src="${im.src}" width="${im.w}" height="${im.h}" alt="${esc(p.title)}, image ${i+1} of ${n}" decoding="async" draggable="false">`).join('')}</div></div>
+    <div class="cs-strip-wrap" id="cs-wrap" tabindex="0" aria-label="${esc(p.title)} images"><div class="cs-track" id="cs-track">${imgs.map((im,i)=>/\.mp4$/.test(im.src)?`<video src="${im.src}" poster="${im.poster||''}" width="${im.w}" height="${im.h}" style="aspect-ratio:${im.w}/${im.h}" autoplay muted loop playsinline preload="auto" aria-label="${esc(p.title)}, film ${i+1} of ${n}"></video>`:`<img src="${im.src}" width="${im.w}" height="${im.h}" alt="${esc(p.title)}, image ${i+1} of ${n}" decoding="async" draggable="false">`).join('')}</div></div>
     ${tabs}<div class="cs-prog" aria-hidden="true"><i id="cs-bar"></i></div>
     <div class="cols cs-cols">${sections.join('')}${last}</div>
   </div></section>`;
@@ -2061,6 +2103,7 @@ function openCase(slug,fi=-1){
   $('#case').querySelectorAll('[data-feat]').forEach(b=>b.addEventListener('click',()=>openCase(slug,+b.dataset.feat)));
   layoutPin();
   $('#cs-track').querySelectorAll('img').forEach(im=>im.addEventListener('load',layoutPin,{once:true}));
+  $('#cs-track').querySelectorAll('video').forEach(v=>v.addEventListener('loadedmetadata',layoutPin,{once:true}));
 }
 /* pinned case study: scrolling down slides the images sideways while header and copy stay on screen */
 let pin={on:false,start:0,dist:0};
