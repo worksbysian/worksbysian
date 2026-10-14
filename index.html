@@ -382,6 +382,16 @@ body.locked{overflow:hidden}
   .hm a:hover,.hm button:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.12em}
   .stream{gap:3vh}
 }
+/* homepage on phones: name top left, Index down the right, About up the left, email bottom right */
+@media (max-width:720px){
+  .mbar,.foot{display:none!important}
+  .hm{display:block}
+  .hm>*{position:fixed;z-index:20;font-family:var(--serif);font-weight:700;letter-spacing:-.03em;line-height:.9;color:#fff;mix-blend-mode:difference;text-decoration:none;font-size:19px;white-space:nowrap}
+  .hm-name{left:var(--gut);top:calc(env(safe-area-inset-top,0px) + 18px)}
+  .hm-index{right:var(--gut);top:calc(env(safe-area-inset-top,0px) + 18px);writing-mode:vertical-rl}
+  .hm-about{left:var(--gut);bottom:calc(env(safe-area-inset-bottom,0px) + 18px);writing-mode:vertical-rl;transform:rotate(180deg)}
+  .hm-mail{right:var(--gut);bottom:calc(env(safe-area-inset-bottom,0px) + 18px)}
+}
 body.locked .hm{display:none}
 /* images grow as they reach the middle of the screen */
 .shot{transform-origin:50% 50%;backface-visibility:hidden}
@@ -1913,7 +1923,7 @@ function render(){
 }
 function sizeShots(){
   const vw=document.documentElement.clientWidth, vh=innerHeight, narrow=vw<720;
-  const W=narrow? vw*.92 : Math.min(vw*.6,1000,vh), maxH=narrow? vh*.72 : vh*.8, gap=narrow?8:14;
+  const W=narrow? vw*.8 : Math.min(vw*.6,1000,vh), maxH=narrow? vh*.72 : vh*.8, gap=narrow?8:14;
   document.documentElement.style.setProperty('--pair-gap',gap+'px');
   shots.forEach((s,i)=>{
     const r=rows[i], sumA=r.reduce((n,t)=>n+t.w/t.h,0);
